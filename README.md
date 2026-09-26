@@ -3,7 +3,7 @@
 Menú para escanear con código QR. Mobile-first, bilingüe (ES/PT), estático y
 sin dependencias: HTML5, CSS3 y JavaScript vanilla.
 
-**El sabor de Madeira, en cada evento.**
+**Un pedazo de Portugal, recién hecho.**
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "name": "Bolo do Caco Fátima — Menú",
   "short_name": "Bolo do Caco",
-  "description": "El sabor de Madeira, en cada evento.",
+  "description": "Un pedazo de Portugal, recién hecho.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
