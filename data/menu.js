@@ -159,19 +159,37 @@ window.MENU = {
 
     /* ---- Doçaria ---- */
     {
-      id: "bolo-nutella",
+      id: "bolo-nutella-peq",
+      category: "docaria",
+      price: 8,
+      badges: [],
+      image: { file: "bolo-nutella-peq.jpg", formats: ["avif", "webp"] },
+      name: { es: "Bolo do Caco con Nutella, pequeño",
+              pt: "Bolo do Caco com Nutella, pequeno" },
+      short: {
+        es: "Dos pedazos de nuestro clásico en dulce.",
+        pt: "Dois pedaços do nosso clássico em doce."
+      },
+      long: {
+        es: "El mismo bolo do caco caliente, abierto y relleno de Nutella hasta que se derrite. Dos pedazos, del tamaño justo para uno.",
+        pt: "O mesmo bolo do caco quente, aberto e recheado com Nutella até derreter. Dois pedaços, do tamanho certo para um."
+      }
+    },
+    {
+      id: "bolo-nutella-gde",
       category: "docaria",
       price: 10,
       badges: ["novedad"],
-      image: { file: "bolo-nutella.jpg", formats: ["avif", "webp"] },
-      name: { es: "Bolo do Caco con Nutella", pt: "Bolo do Caco com Nutella" },
+      image: { file: "bolo-nutella-gde.jpg", formats: ["avif", "webp"] },
+      name: { es: "Bolo do Caco con Nutella, grande",
+              pt: "Bolo do Caco com Nutella, grande" },
       short: {
-        es: "Nuestro clásico, en versión dulce.",
-        pt: "O nosso clássico, em versão doce."
+        es: "Cuatro pedazos, para compartir.",
+        pt: "Quatro pedaços, para partilhar."
       },
       long: {
-        es: "El mismo bolo do caco caliente, abierto y relleno de Nutella hasta que se derrite. La versión dulce que se lleva media fila del puesto.",
-        pt: "O mesmo bolo do caco quente, aberto e recheado com Nutella até derreter. A versão doce que leva meia fila da banca."
+        es: "El mismo bolo do caco caliente, abierto y relleno de Nutella hasta que se derrite. Cuatro pedazos, para poner en el centro de la mesa.",
+        pt: "O mesmo bolo do caco quente, aberto e recheado com Nutella até derreter. Quatro pedaços, para pôr no centro da mesa."
       }
     },
     {
