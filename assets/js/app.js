@@ -57,10 +57,9 @@
 
   var ICON = {
     arrow: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    whatsapp: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.06c-.24.68-1.42 1.3-1.95 1.35-.53.05-1.03.24-3.5-.73-2.98-1.17-4.85-4.27-5-4.47-.15-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.37.78-.37.2 0 .4 0 .58.01.19.01.44-.07.68.52.24.59.83 2.02.9 2.17.07.15.12.32.02.51-.1.2-.34.5-.53.73-.2.24-.29.32-.15.56.15.24.66 1.09 1.42 1.77.97.87 1.72 1.14 1.96 1.26.24.12.39.1.53-.06.15-.15.63-.73.8-.98.17-.24.34-.2.58-.12.24.09 1.51.71 1.77.84.26.13.44.2.5.31.07.11.07.66-.17 1.34z" fill="currentColor"/></svg>',
     instagram: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>',
     dough: '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 21c0-5 5.4-9 12-9s12 4 12 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 21h26a1 1 0 010 2H3a1 1 0 010-2z" fill="currentColor"/><path d="M11 16.5c1.2-1 2.6-1 3.8 0M17.5 15c1.2-1 2.6-1 3.8 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/></svg>',
-    stone: '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 24l3-5h16l3 5z" fill="currentColor" opacity=".25"/><path d="M5 24h22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><ellipse cx="16" cy="15" rx="8" ry="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 9.5c0-1.6 1-2.2 1-3.5M16 8.5c0-1.6 1-2.2 1-3.5M21 9.5c0-1.6 1-2.2 1-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/></svg>',
+    lume: '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 24l3-5h16l3 5z" fill="currentColor" opacity=".25"/><path d="M5 24h22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><ellipse cx="16" cy="15" rx="8" ry="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 9.5c0-1.6 1-2.2 1-3.5M16 8.5c0-1.6 1-2.2 1-3.5M21 9.5c0-1.6 1-2.2 1-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/></svg>',
     stand: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 10h16v9a1 1 0 01-1 1H5a1 1 0 01-1-1z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 10l1.6-4.4A1 1 0 015.5 5h13a1 1 0 01.9.6L21 10c0 1.4-1.1 2.5-2.5 2.5S16 11.4 16 10c0 1.4-1.1 2.5-2.5 2.5S11 11.4 11 10c0 1.4-1.1 2.5-2.5 2.5S6 11.4 6 10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 20v-4.5h4V20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
     butter: '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 17c0-4.4 4.5-8 10-8s10 3.6 10 8v1c0 3.3-4.5 6-10 6S6 21.3 6 18z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 17c3 2.4 7 3.4 10 3.4S23 19.4 26 17" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".6"/><path d="M13 12.5l1.5 1.5 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
@@ -241,12 +240,6 @@
   }
 
   /* ---------- enlaces de contacto ---------- */
-
-  function waLink(text) {
-    var n = (DATA.site.whatsapp || '').replace(/\D/g, '');
-    if (!n) return null;
-    return 'https://wa.me/' + n + '?text=' + encodeURIComponent(text);
-  }
 
   function igLink() {
     return 'https://instagram.com/' + DATA.site.instagram;

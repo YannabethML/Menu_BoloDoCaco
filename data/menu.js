@@ -28,9 +28,6 @@ window.MENU = {
     },
     currency: "$",
     instagram: "bolodocacofatima_",
-    // ▼ RELLENAR: número con código de país, solo dígitos. Ej: "584121234567"
-    //   Si se deja vacío, el botón flotante enlaza a Instagram.
-    whatsapp: "",
     // Imagen del hero. null = se usa el fondo de azulejo (queda acabado).
     // Formato: { file: "hero-bolo.jpg", formats: ["avif","webp"] }  ó  "hero-bolo.jpg"
     heroImage: { file: "hero-bolo.jpg", formats: ["avif", "webp"] }
@@ -46,8 +43,8 @@ window.MENU = {
       name:    { es: "Bolo do Caco",  pt: "Bolo do Caco" },
       kicker:  { es: "Nuestra especialidad", pt: "A nossa especialidade" },
       tagline: {
-        es: "Masa de boniato cocida sobre piedra, como en Madeira.",
-        pt: "Massa de batata-doce cozida na pedra, como na Madeira."
+        es: "Masa de boniato dorada al fuego, como en Madeira.",
+        pt: "Massa de batata-doce dourada ao lume, como na Madeira."
       }
     },
     {
@@ -78,12 +75,12 @@ window.MENU = {
       image: { file: "bolo-natural.jpg", formats: ["avif", "webp"] },
       name: { es: "Bolo do Caco Grande", pt: "Bolo do Caco Grande" },
       short: {
-        es: "El clásico, tal cual sale de la piedra.",
-        pt: "O clássico, tal como sai da pedra."
+        es: "El clásico, recién hecho y sin nada encima.",
+        pt: "O clássico, acabado de fazer e sem nada por cima."
       },
       long: {
-        es: "Masa de boniato cocida sobre piedra caliente: dorado y crujiente por fuera, tierno y esponjoso por dentro. Sin nada encima, para acompañar lo que quieras.",
-        pt: "Massa de batata-doce cozida na pedra quente: dourado e crocante por fora, fofo e macio por dentro. Sem nada por cima, para acompanhar o que quiser."
+        es: "Masa de boniato amasada a mano y dorada al fuego: crujiente por fuera, tierno y esponjoso por dentro. Sin nada encima, para acompañar lo que quieras.",
+        pt: "Massa de batata-doce amassada à mão e dourada ao lume: crocante por fora, fofo e macio por dentro. Sem nada por cima, para acompanhar o que quiser."
       }
     },
     {
@@ -120,8 +117,8 @@ window.MENU = {
         pt: "Chouriço fumado Monserratina, na chapa."
       },
       long: {
-        es: "Nuestro bolo do caco relleno de chorizo ahumado Monserratina hecho a la plancha, con su margarina de ajo y perejil. Ahumado, jugoso y contundente.",
-        pt: "O nosso bolo do caco recheado com chouriço fumado Monserratina feito na chapa, com a sua margarina de alho e salsa. Fumado, suculento e substancial."
+        es: "Nuestro bolo do caco relleno de chorizo ahumado Monserratina hecho a la plancha. Ahumado, jugoso y contundente.",
+        pt: "O nosso bolo do caco recheado com chouriço fumado Monserratina feito na chapa. Fumado, suculento e substancial."
       }
     },
     {
@@ -139,8 +136,8 @@ window.MENU = {
         pt: "Chouriço português, o recheio mais pedido da mesa."
       },
       long: {
-        es: "Chorizo portugués en lonchas gruesas dentro del bolo do caco recién hecho, con margarina de ajo y perejil. Sabor a fiesta de romaria.",
-        pt: "Chouriço português em fatias grossas dentro do bolo do caco acabado de fazer, com margarina de alho e salsa. Sabor a festa de romaria."
+        es: "Chorizo portugués en lonchas gruesas dentro del bolo do caco recién hecho. Sabor a fiesta de romaria.",
+        pt: "Chouriço português em fatias grossas dentro do bolo do caco acabado de fazer. Sabor a festa de romaria."
       }
     },
 
@@ -153,8 +150,8 @@ window.MENU = {
       image: { file: "bolo-nutella.jpg", formats: ["avif", "webp"] },
       name: { es: "Bolo do Caco con Nutella", pt: "Bolo do Caco com Nutella" },
       short: {
-        es: "Nuestra piedra, en versión dulce.",
-        pt: "A nossa pedra, em versão doce."
+        es: "Nuestro clásico, en versión dulce.",
+        pt: "O nosso clássico, em versão doce."
       },
       long: {
         es: "El mismo bolo do caco caliente, abierto y relleno de Nutella hasta que se derrite. La versión dulce que se lleva media fila del puesto.",
@@ -206,10 +203,10 @@ window.MENU = {
                pt: "Amassada à mão, sem pressa, como se faz na ilha." }
     },
     {
-      icon: "stone",
-      title: { es: "Sobre la piedra", pt: "Sobre a pedra" },
-      text:  { es: "Cocido en el caco, la piedra basáltica que le da el nombre.",
-               pt: "Cozido no caco, a pedra basáltica que lhe dá o nome." }
+      icon: "lume",
+      title: { es: "Dorado al fuego", pt: "Dourado ao lume" },
+      text:  { es: "Cocido despacio, hasta que la corteza queda tostada.",
+               pt: "Cozido devagar, até a côdea ficar tostada." }
     },
     {
       icon: "butter",
@@ -231,8 +228,8 @@ window.MENU = {
     subtitle: { es: "La fiesta de la vendimia portuguesa",
                 pt: "A festa das vindimas portuguesas" },
     text: {
-      es: "Entre finales de agosto y octubre, el Valle del Duero se llena de gente recogiendo la uva a mano y pisándola descalza en lagares de granito, como se ha hecho durante siglos. La vendimia se celebra con desfiles, fado en vivo y mesas largas que no se acaban. Hoy traemos aquí ese mismo espíritu: la fiesta del final de la cosecha, con el pan de la isla recién hecho sobre la piedra.",
-      pt: "Entre o fim de agosto e outubro, o Vale do Douro enche-se de gente a apanhar a uva à mão e a pisá-la descalça em lagares de granito, como há séculos. A vindima festeja-se com desfiles, fado ao vivo e mesas compridas que não acabam. Hoje trazemos aqui esse mesmo espírito: a festa do fim da colheita, com o pão da ilha acabado de fazer na pedra."
+      es: "Entre finales de agosto y octubre, el Valle del Duero se llena de gente recogiendo la uva a mano y pisándola descalza en lagares de granito, como se ha hecho durante siglos. La vendimia se celebra con desfiles, fado en vivo y mesas largas que no se acaban. Hoy traemos aquí ese mismo espíritu: la fiesta del final de la cosecha, con el pan de la isla recién hecho.",
+      pt: "Entre o fim de agosto e outubro, o Vale do Douro enche-se de gente a apanhar a uva à mão e a pisá-la descalça em lagares de granito, como há séculos. A vindima festeja-se com desfiles, fado ao vivo e mesas compridas que não acabam. Hoje trazemos aqui esse mesmo espírito: a festa do fim da colheita, com o pão da ilha acabado de fazer."
     },
     facts: [
       { label: { es: "Cuándo",    pt: "Quando" },
@@ -257,9 +254,6 @@ window.MENU = {
       scroll: "Desliza",
       viewMore: "Ver detalle",
       close: "Cerrar",
-      order: "Encargar por WhatsApp",
-      orderShort: "Encargar",
-      orderIg: "Escríbenos por Instagram",
       eventoKicker: "El evento de hoy",
       eventoChip: "El evento",
       orderAtStand: "Pídelo en nuestro stand",
@@ -272,8 +266,6 @@ window.MENU = {
         tradicional: "Tradicional",
         vegetariano: "Vegetariano"
       },
-      waProduct: "Hola, quisiera encargar",
-      waGeneral: "Hola, quisiera hacer un encargo",
       photoSoon: "Foto en camino",
       priceNote: "Precios en dólares"
     },
@@ -283,9 +275,6 @@ window.MENU = {
       scroll: "Deslize",
       viewMore: "Ver detalhe",
       close: "Fechar",
-      order: "Encomendar por WhatsApp",
-      orderShort: "Encomendar",
-      orderIg: "Fale connosco no Instagram",
       eventoKicker: "O evento de hoje",
       eventoChip: "O evento",
       orderAtStand: "Peça no nosso stand",
@@ -298,8 +287,6 @@ window.MENU = {
         tradicional: "Tradicional",
         vegetariano: "Vegetariano"
       },
-      waProduct: "Olá, queria encomendar",
-      waGeneral: "Olá, queria fazer uma encomenda",
       photoSoon: "Foto a caminho",
       priceNote: "Preços em dólares"
     }

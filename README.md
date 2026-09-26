@@ -49,9 +49,9 @@ No hace falta tocar el HTML, el CSS ni el JS.
 
 ### Pendientes de rellenar
 
-Solo queda el **número de WhatsApp** → `site.whatsapp` en `data/menu.js`, con
-solo dígitos y código de país (ej. `"584121234567"`). Mientras esté vacío, el
-botón flotante enlaza a Instagram automáticamente.
+
+Nada. El contacto es solo Instagram: el menú se escanea en el stand y el
+pedido se hace ahí mismo, así que no lleva botones de encargo.
 
 ## Vista previa
 
