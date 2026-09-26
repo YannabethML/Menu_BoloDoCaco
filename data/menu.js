@@ -33,7 +33,7 @@ window.MENU = {
     whatsapp: "",
     // Imagen del hero. null = se usa el fondo de azulejo (queda acabado).
     // Formato: { file: "hero-bolo.jpg", formats: ["avif","webp"] }  ó  "hero-bolo.jpg"
-    heroImage: null
+    heroImage: { file: "hero-bolo.jpg", formats: ["avif", "webp"] }
   },
 
   /* ---------------------------------------------------------
@@ -75,7 +75,7 @@ window.MENU = {
       category: "bolo-do-caco",
       price: 3,
       badges: ["tradicional"],
-      image: null,
+      image: { file: "bolo-natural.jpg", formats: ["avif", "webp"] },
       name: { es: "Bolo do Caco Grande", pt: "Bolo do Caco Grande" },
       short: {
         es: "El clásico, tal cual sale de la piedra.",
@@ -110,7 +110,7 @@ window.MENU = {
       category: "bolo-do-caco",
       price: 10,
       badges: [],
-      image: null,
+      image: { file: "bolo-monserratina.jpg", formats: ["avif", "webp"] },
       name: {
         es: "Bolo do Caco con Chorizo Ahumado Monserratina",
         pt: "Bolo do Caco com Chouriço Fumado Monserratina"
@@ -129,7 +129,7 @@ window.MENU = {
       category: "bolo-do-caco",
       price: 14,
       badges: [],
-      image: null,
+      image: { file: "bolo-portugues.jpg", formats: ["avif", "webp"] },
       name: {
         es: "Bolo do Caco con Chorizo Portugués",
         pt: "Bolo do Caco com Chouriço Português"

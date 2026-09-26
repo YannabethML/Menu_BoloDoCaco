@@ -159,7 +159,7 @@
       card.setAttribute('role', 'listitem');
       card.dataset.id = p.id;
       card.innerHTML =
-        '<div class="bolo__media">' + mediaMarkup(p, 'media--43') +
+        '<div class="bolo__media">' + mediaMarkup(p, 'media--11') +
           '<span class="bolo__price">' + esc(money(p.price)) + '</span>' +
           (p.badges && p.badges.length ? '<span class="bolo__badges">' + badgesMarkup(p.badges) + '</span>' : '') +
         '</div>' +
@@ -329,12 +329,24 @@
     var media = document.getElementById('heroMedia');
     var img = DATA.site.heroImage;
     if (!img) { media.className = 'hero__media azulejo'; return; }
+
     var file = typeof img === 'string' ? img : img.file;
+    var formats = (typeof img === 'string' ? [] : img.formats) || [];
+    var base = 'assets/img/' + file.replace(/\.[^.]+$/, '');
+    var fallback = "url('assets/img/" + file + "')";
+
     media.className = 'hero__media has-photo';
-    media.style.backgroundImage = "url('assets/img/" + file + "')";
-    var pre = document.createElement('link');
-    pre.rel = 'preload'; pre.as = 'image'; pre.href = 'assets/img/' + file;
-    document.head.appendChild(pre);
+    media.style.backgroundImage = fallback;
+
+    /* AVIF/WebP cuando el navegador los admite, con reserva a JPG */
+    if (formats.length && window.CSS && CSS.supports) {
+      var parts = formats.map(function (f) {
+        return "url('" + base + "." + f + "') type('image/" + f + "')";
+      });
+      parts.push(fallback + " type('image/jpeg')");
+      var value = 'image-set(' + parts.join(', ') + ')';
+      if (CSS.supports('background-image', value)) media.style.backgroundImage = value;
+    }
   }
 
   /* ---------- bottom sheet ---------- */

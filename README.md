@@ -31,9 +31,8 @@ No hace falta tocar el HTML, el CSS ni el JS.
 1. **Número de WhatsApp** → `site.whatsapp` en `data/menu.js`, solo dígitos con
    código de país (ej. `"584121234567"`). Mientras esté vacío, el botón flotante
    enlaza a Instagram automáticamente.
-2. **Logo** → `assets/img/logo.svg`; luego sustituir el `<svg>` de `.brand__mark`
-   en `index.html`.
-3. **Fotos** → ver `assets/img/README.md`.
+2. **Cuatro fotos** (margarina de ajo, Nutella, bolo de mel y broas) →
+   ver `assets/img/README.md`.
 
 ## Vista previa
 
@@ -61,7 +60,8 @@ favicon.svg
 data/menu.js            ← ÚNICO archivo de contenido
 assets/css/styles.css   Tokens de color, tipografía y componentes
 assets/js/app.js        Render, idioma, carrusel, scroll-spy, bottom sheet
-assets/img/             Fotos + patrón de azulejo
+assets/img/             Fotos (avif/webp/jpg), logo y patrón de azulejo
+tools/                  Script para convertir fotos nuevas
 assets/fonts/           Fraunces + Inter (variables, subsets, OFL)
 ```
 
