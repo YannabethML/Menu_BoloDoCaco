@@ -46,7 +46,10 @@ img{display:block}
 }
 .diapositivas{position:absolute;inset:0}
 
-.dia{position:absolute;inset:0;opacity:0;will-change:opacity}
+/* el will-change lo pone y lo quita el JS solo en las que están en
+   pantalla: dejarlo fijo en las nueve reserva memoria de vídeo de más */
+.dia{position:absolute;inset:0;opacity:0;visibility:hidden;
+  backface-visibility:hidden;transform:translateZ(0)}
 
 /* ---------- textura de azulejo ---------- */
 .azulejo{position:absolute;inset:0;
