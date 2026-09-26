@@ -14,6 +14,8 @@
 | `logo-512.webp` | Logo para usos grandes (carteles, redes) |
 | `bolo-ajo.*` | Bolo do Caco con Margarina de Ajo y Perejil |
 | `bolo-nutella.*` | Bolo do Caco con Nutella |
+| `chorizo-kilo.*` | Chorizo Portugués por kilo |
+| `mantequilla-ajo.*` | Mantequilla de Ajo y Perejil en pote |
 | `bolo-de-mel.*` | Bolo de Mel |
 | `broas.*` | Galletas Broas |
 

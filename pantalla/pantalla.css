@@ -109,6 +109,10 @@ img{display:block}
 .sello--tradicional{background:transparent;color:var(--c-azulejo);
   box-shadow:inset 0 0 0 2px var(--c-azulejo)}
 
+/* la unidad va debajo del precio, en letra de texto y más discreta */
+.precio__unidad{display:block;font-family:var(--f-text);font-weight:600;
+  font-size:26px;letter-spacing:.04em;color:var(--c-ink-soft);margin-top:10px}
+
 /* ============ B2 · DOS PRODUCTOS JUNTOS ============ */
 .dia--pareja{background:var(--c-base);display:flex;align-items:center;justify-content:center}
 .par__todo{width:100%;padding:0 110px}

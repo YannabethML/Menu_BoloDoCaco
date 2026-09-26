@@ -34,8 +34,8 @@
      por separado: esto es solo cómo se agrupan en la pantalla del stand. */
   var PAREJAS = [
     ['bolo-monserratina', 'bolo-portugues'],
-    ['bolo-nutella-peq', 'bolo-nutella-gde'],
-    ['bolo-de-mel', 'broas']
+    ['bolo-de-mel', 'broas'],
+    ['chorizo-kilo', 'mantequilla-ajo']
   ];
 
   function t(o) { return o ? (o[LANG] || o.es || '') : ''; }
@@ -44,6 +44,12 @@
     var c = DATA.site.currency || '$';
     return c + (n % 1 === 0 ? n : n.toFixed(2));
   }
+  function precioHTML(p) {
+    var u = t(p.unit);
+    return esc(dinero(p.price)) +
+      (u ? '<span class="precio__unidad">' + esc(u) + '</span>' : '');
+  }
+
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -109,7 +115,7 @@
             '<p class="prod__desc">' + esc(t(p.short)) + '</p>' +
             (etiqueta ? '<span class="prod__sello sello--' + esc(etiqueta) + '">' +
                         esc(nombreEtiqueta) + '</span>' : '') +
-            '<p class="prod__precio">' + esc(dinero(p.price)) + '</p>' +
+            '<p class="prod__precio">' + precioHTML(p) + '</p>' +
           '</div>' +
         '</div>'
     };
@@ -127,7 +133,7 @@
         '</div>' +
         '<h3 class="par__nombre">' + esc(t(p.name)) + '</h3>' +
         '<p class="par__desc">' + esc(t(p.short)) + '</p>' +
-        '<p class="par__precio">' + esc(dinero(p.price)) + '</p>' +
+        '<p class="par__precio">' + precioHTML(p) + '</p>' +
       '</div>';
     }).join('');
 

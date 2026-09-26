@@ -55,6 +55,15 @@ window.MENU = {
         es: "Los dulces que acompañan a cualquier hora del día.",
         pt: "Os doces que acompanham a qualquer hora do dia."
       }
+    },
+    {
+      id: "para-llevar",
+      name:    { es: "Para llevar",  pt: "Para levar" },
+      kicker:  { es: "De nuestra despensa", pt: "Da nossa despensa" },
+      tagline: {
+        es: "Lo que ponemos en el bolo, para que lo hagas en casa.",
+        pt: "O que pomos no bolo, para fazer em casa."
+      }
     }
   ],
 
@@ -159,30 +168,12 @@ window.MENU = {
 
     /* ---- Doçaria ---- */
     {
-      id: "bolo-nutella-peq",
-      category: "docaria",
-      price: 8,
-      badges: [],
-      image: { file: "bolo-nutella-peq.jpg", formats: ["avif", "webp"] },
-      name: { es: "Bolo do Caco con Nutella, pequeño",
-              pt: "Bolo do Caco com Nutella, pequeno" },
-      short: {
-        es: "Dos pedazos de nuestro clásico en dulce.",
-        pt: "Dois pedaços do nosso clássico em doce."
-      },
-      long: {
-        es: "El mismo bolo do caco caliente, abierto y relleno de Nutella hasta que se derrite. Dos pedazos, del tamaño justo para uno.",
-        pt: "O mesmo bolo do caco quente, aberto e recheado com Nutella até derreter. Dois pedaços, do tamanho certo para um."
-      }
-    },
-    {
-      id: "bolo-nutella-gde",
+      id: "bolo-nutella",
       category: "docaria",
       price: 10,
       badges: ["novedad"],
-      image: { file: "bolo-nutella-gde.jpg", formats: ["avif", "webp"] },
-      name: { es: "Bolo do Caco con Nutella, grande",
-              pt: "Bolo do Caco com Nutella, grande" },
+      image: { file: "bolo-nutella.jpg", formats: ["avif", "webp"] },
+      name: { es: "Bolo do Caco con Nutella", pt: "Bolo do Caco com Nutella" },
       short: {
         es: "Cuatro pedazos, para compartir.",
         pt: "Quatro pedaços, para partilhar."
@@ -222,6 +213,42 @@ window.MENU = {
       long: {
         es: "Broas caseras, con su miga densa y su punto justo de dulzor. Las de toda la vida, las que se comen de camino a casa.",
         pt: "Broas caseiras, de miolo denso e doçura no ponto. As de sempre, as que se comem no caminho para casa."
+      }
+    },
+
+    /* ---- Para llevar ---- */
+    {
+      id: "chorizo-kilo",
+      category: "para-llevar",
+      price: 40,
+      unit: { es: "el kilo", pt: "o quilo" },
+      badges: [],
+      image: { file: "chorizo-kilo.jpg", formats: ["avif", "webp"] },
+      name: { es: "Chorizo Portugués", pt: "Chouriço Português" },
+      short: {
+        es: "Nuestro chorizo, para llevártelo por kilo.",
+        pt: "O nosso chouriço, para levar ao quilo."
+      },
+      long: {
+        es: "El mismo chorizo portugués que va dentro de nuestro bolo do caco, para que te lo lleves y lo hagas en casa. Se vende por kilo.",
+        pt: "O mesmo chouriço português que vai dentro do nosso bolo do caco, para levar e fazer em casa. Vende-se ao quilo."
+      }
+    },
+    {
+      id: "mantequilla-ajo",
+      category: "para-llevar",
+      price: 6,
+      unit: { es: "el pote", pt: "o boião" },
+      badges: [],
+      image: { file: "mantequilla-ajo.jpg", formats: ["avif", "webp"] },
+      name: { es: "Mantequilla de Ajo y Perejil", pt: "Manteiga de Alho e Salsa" },
+      short: {
+        es: "La que untamos en el bolo, en pote.",
+        pt: "A que barramos no bolo, em boião."
+      },
+      long: {
+        es: "La misma mantequilla de ajo y perejil que lleva nuestro bolo do caco, en pote para llevar. Va bien con pan, con carnes o con lo que se te ocurra.",
+        pt: "A mesma manteiga de alho e salsa que leva o nosso bolo do caco, em boião para levar. Vai bem com pão, com carnes ou com o que lhe apetecer."
       }
     }
   ],

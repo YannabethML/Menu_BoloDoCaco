@@ -40,6 +40,14 @@
     return c + (n % 1 === 0 ? n : n.toFixed(2));
   }
 
+  /* Precio con su unidad cuando el producto no se vende por pieza:
+     "$40 el kilo" en lugar de un "$40" que se leería como el precio de uno. */
+  function precioHTML(p, clase) {
+    var u = t(p.unit);
+    return esc(money(p.price)) +
+      (u ? ' <span class="' + clase + '">' + esc(u) + '</span>' : '');
+  }
+
   function el(tag, cls, html) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
@@ -162,7 +170,7 @@
       card.dataset.id = p.id;
       card.innerHTML =
         '<div class="bolo__media">' + mediaMarkup(p, 'media--11') +
-          '<span class="bolo__price">' + esc(money(p.price)) + '</span>' +
+          '<span class="bolo__price">' + precioHTML(p, 'precio__unidad') + '</span>' +
           (p.badges && p.badges.length ? '<span class="bolo__badges">' + badgesMarkup(p.badges) + '</span>' : '') +
         '</div>' +
         '<div class="bolo__body">' +
@@ -218,7 +226,7 @@
           '<h3 class="card__name">' + esc(t(p.name)) + '</h3>' +
           '<p class="card__short">' + esc(t(p.short)) + '</p>' +
           '<div class="card__foot">' +
-            '<span class="card__price">' + esc(money(p.price)) + '</span>' +
+            '<span class="card__price">' + precioHTML(p, 'precio__unidad') + '</span>' +
             (p.badges && p.badges.length ? badgesMarkup(p.badges) : '') +
           '</div>' +
         '</div>';
@@ -373,7 +381,7 @@
     document.getElementById('sheetMedia').innerHTML = mediaMarkup(p, '');
     document.getElementById('sheetBadges').innerHTML = badgesMarkup(p.badges);
     document.getElementById('sheetTitle').textContent = t(p.name);
-    document.getElementById('sheetPrice').textContent = money(p.price);
+    document.getElementById('sheetPrice').innerHTML = precioHTML(p, 'precio__unidad');
     document.getElementById('sheetDesc').textContent = t(p.long) || t(p.short);
 
     document.getElementById('sheetActions').innerHTML =

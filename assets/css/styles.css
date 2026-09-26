@@ -363,6 +363,11 @@ a{color:var(--c-azulejo)}
 .bolo:active{transform:scale(.985)}
 @media (hover:hover){.bolo:hover{box-shadow:var(--sh-2);transform:translateY(-2px)}}
 .bolo__media{position:relative;border-radius:0}
+.precio__unidad{
+  font-family:var(--f-text);font-weight:600;
+  font-size:.62em;letter-spacing:.02em;opacity:.78;
+  white-space:nowrap;
+}
 .bolo__price{
   position:absolute;right:.75rem;bottom:.75rem;
   background:var(--c-terracota);color:#FFF;
@@ -554,6 +559,7 @@ a{color:var(--c-azulejo)}
   font-variation-settings:"SOFT" 45,"WONK" 1,"opsz" 32}
 .sheet__price{font-family:var(--f-display);font-size:1.75rem;font-weight:700;
   color:var(--c-terracota);line-height:1;font-variant-numeric:tabular-nums}
+.sheet__price .precio__unidad{color:var(--c-ink-soft);opacity:1}
 .sheet__desc{color:var(--c-ink-soft);font-size:.95rem;text-wrap:pretty}
 .sheet__actions{margin-top:.4rem}
 .sheet__stand{
