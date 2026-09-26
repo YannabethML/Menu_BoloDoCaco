@@ -395,6 +395,7 @@ a{color:var(--c-azulejo)}
   background:var(--c-surface-2);color:var(--c-ink-soft);
   border:1px solid var(--c-line);
 }
+.badge--promo{background:var(--c-terracota);color:#FFF;border-color:transparent}
 .badge--estrella{background:var(--c-codea);color:#2B2008;border-color:transparent}
 .badge--novedad{background:var(--c-buganvilia);color:#FFF;border-color:transparent}
 .badge--tradicional{background:transparent;color:var(--c-azulejo);border-color:var(--c-azulejo)}

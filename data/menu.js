@@ -84,6 +84,22 @@ window.MENU = {
       }
     },
     {
+      id: "promo-2x5",
+      category: "bolo-do-caco",
+      price: 5,
+      badges: ["promo"],
+      image: { file: "promo-2x5.jpg", formats: ["avif", "webp"] },
+      name: { es: "2 Bolos do Caco Grandes", pt: "2 Bolos do Caco Grandes" },
+      short: {
+        es: "Llévate dos y pagas cinco dólares.",
+        pt: "Leve dois e paga cinco dólares."
+      },
+      long: {
+        es: "Dos bolos do caco grandes por cinco dólares, en vez de seis. Para compartir en la mesa o llevarte uno a casa.",
+        pt: "Dois bolos do caco grandes por cinco dólares, em vez de seis. Para partilhar à mesa ou levar um para casa."
+      }
+    },
+    {
       id: "bolo-ajo",
       category: "bolo-do-caco",
       price: 5,
@@ -260,6 +276,7 @@ window.MENU = {
       igLabel: "Síguenos en Instagram",
       follow: "Síguenos",
       badges: {
+        promo: "Promoción",
         estrella: "La estrella",
         "mas-vendido": "Más vendido",
         novedad: "Novedad",
@@ -281,6 +298,7 @@ window.MENU = {
       igLabel: "Siga-nos no Instagram",
       follow: "Siga-nos",
       badges: {
+        promo: "Promoção",
         estrella: "A estrela",
         "mas-vendido": "Mais vendido",
         novedad: "Novidade",
