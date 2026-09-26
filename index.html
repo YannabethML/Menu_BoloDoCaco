@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yannabethml.github.io/Menu_BoloDoCaco/">
 <meta property="og:title" content="Bolo do Caco Fátima — Menú">
-<meta property="og:description" content="Un pedazo de Portugal, recién hecho.">
+<meta property="og:description" content="Un pedazo de Portugal en cada bocado.">
 <meta property="og:image" content="https://yannabethml.github.io/Menu_BoloDoCaco/assets/img/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -48,6 +48,38 @@
   <section class="hero" id="hero">
     <div class="hero__media" id="heroMedia" aria-hidden="true"></div>
     <div class="hero__veil" aria-hidden="true"></div>
+
+    <!-- Sello de la casa: marcado sobre la corteza. Decorativo, no se anuncia
+         a los lectores de pantalla porque no aporta nada que no diga ya el hero. -->
+    <svg class="sello" viewBox="0 0 130 130" fill="none" aria-hidden="true" focusable="false">
+      <defs>
+        <!-- irregularidad del borde: evita el aspecto de vector perfecto -->
+        <filter id="selloRough">
+          <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11" result="n"/>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="1.7" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <path id="selloArcoTop" d="M 65,65 m -47,0 a 47,47 0 0 1 94,0"/>
+        <path id="selloArcoBot" d="M 65,65 m -47,0 a 47,47 0 0 0 94,0"/>
+      </defs>
+      <g filter="url(#selloRough)">
+        <circle cx="65" cy="65" r="61" stroke="currentColor" stroke-width="2.4"/>
+        <circle cx="65" cy="65" r="54.5" stroke="currentColor" stroke-width=".9"/>
+        <text fill="currentColor" font-size="9" font-weight="700" letter-spacing="1.35">
+          <textPath href="#selloArcoTop" startOffset="50%" text-anchor="middle">BOLO DO CACO FÁTIMA</textPath>
+        </text>
+        <text fill="currentColor" font-size="7.6" font-weight="600" letter-spacing="2.2">
+          <textPath href="#selloArcoBot" startOffset="50%" text-anchor="middle">MADEIRA · VENEZUELA</textPath>
+        </text>
+        <path d="M15.5 65l2.6-2.6 2.6 2.6-2.6 2.6zM109.3 65l2.6-2.6 2.6 2.6-2.6 2.6z" fill="currentColor"/>
+        <text x="65" y="53" fill="currentColor" font-size="7.4" font-weight="700"
+              letter-spacing="2.4" text-anchor="middle">FEITO</text>
+        <text x="65" y="74" fill="currentColor" font-size="19" font-weight="700"
+              text-anchor="middle" class="sello__display">À MÃO</text>
+        <path d="M48 83h34" stroke="currentColor" stroke-width="1.1"/>
+        <path d="M59 90l1.9-1.9 1.9 1.9-1.9 1.9zM65 90l1.9-1.9 1.9 1.9-1.9 1.9zM71 90l1.9-1.9 1.9 1.9-1.9 1.9z"
+              fill="currentColor" opacity=".85"/>
+      </g>
+    </svg>
     <div class="hero__inner">
       <p class="hero__kicker" data-i18n="site.kicker">Madeira · Venezuela</p>
       <h1 class="hero__title">
@@ -55,7 +87,7 @@
         Bolo do Caco
       </h1>
       <span class="flourish" aria-hidden="true"></span>
-      <p class="hero__tagline" data-i18n="site.tagline">Un pedazo de Portugal, recién hecho</p>
+      <p class="hero__tagline" data-i18n="site.tagline">Un pedazo de Portugal en cada bocado</p>
     </div>
     <a class="hero__cue" href="#menu" aria-label="Bajar al menú">
       <span data-i18n="ui.scroll">Desliza</span>

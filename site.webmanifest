@@ -1,7 +1,7 @@
 {
   "name": "Bolo do Caco Fátima — Menú",
   "short_name": "Bolo do Caco",
-  "description": "Un pedazo de Portugal, recién hecho.",
+  "description": "Un pedazo de Portugal en cada bocado.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

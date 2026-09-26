@@ -19,8 +19,8 @@ window.MENU = {
     legal: "C.A.",
     // Eslogan del hero (máx. ~60 caracteres para que no rompa línea en móvil)
     tagline: {
-      es: "Un pedazo de Portugal, recién hecho",
-      pt: "Um pedaço de Portugal, acabado de fazer"
+      es: "Un pedazo de Portugal en cada bocado",
+      pt: "Um pedaço de Portugal em cada dentada"
     },
     kicker: {
       es: "Madeira · Venezuela",

@@ -243,6 +243,21 @@ a{color:var(--c-azulejo)}
 @keyframes bob{0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(4px);opacity:1}}
 @media (prefers-reduced-motion:reduce){.hero__cue svg{animation:none}}
 
+/* Sello de la casa, marcado sobre la corteza del pan */
+.sello{
+  position:absolute;z-index:1;pointer-events:none;
+  width:clamp(6.25rem,29vw,8.5rem);height:auto;aspect-ratio:1;
+  top:16%;right:max(1.25rem, calc(50% - 13rem));
+  transform:rotate(-8deg);
+  color:#2A1708;opacity:.72;
+  mix-blend-mode:multiply;
+  filter:url(#selloRough) blur(.2px);
+  font-family:var(--f-text);
+}
+.sello__display{font-family:var(--f-display);font-variation-settings:"SOFT" 40,"WONK" 1}
+/* sin foto de portada el sello no tendría sobre qué marcarse */
+.hero__media.azulejo ~ .sello{display:none}
+
 /* ---------- 6. Nav de categorías ---------- */
 .catnav{
   position:sticky;top:var(--topbar-h);z-index:35;
