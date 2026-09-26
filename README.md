@@ -81,7 +81,8 @@ assets/css/styles.css   Tokens de color, tipografía y componentes
 assets/js/app.js        Render, idioma, carrusel, scroll-spy, bottom sheet
                         y la sección del evento del día
 assets/img/             Fotos (avif/webp/jpg), logo y patrón de azulejo
-tools/                  Script para convertir fotos nuevas
+pantalla/               Bucle 16:9 para el televisor del stand + el MP4
+tools/                  Scripts: convertir fotos y generar el video
 assets/fonts/           Fraunces + Inter (variables, subsets, OFL)
 ```
 

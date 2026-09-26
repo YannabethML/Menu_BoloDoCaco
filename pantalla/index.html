@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bolo do Caco Fátima — Pantalla</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="pantalla.css">
+</head>
+<body>
+
+<!-- El escenario mide siempre 1920x1080 y se escala para llenar la pantalla,
+     así se ve igual en un televisor, en una laptop o en la grabación. -->
+<div class="escenario" id="escenario">
+  <div class="diapositivas" id="diapositivas"></div>
+
+  <!-- firma fija, sobre todas las diapositivas -->
+  <div class="firma" id="firma">
+    <img class="firma__logo" src="../assets/img/logo-256.png" alt="">
+    <span class="firma__texto">
+      <strong>Bolo do Caco</strong>
+      <em>Fátima</em>
+    </span>
+  </div>
+
+  <div class="progreso"><span class="progreso__barra" id="progresoBarra"></span></div>
+</div>
+
+<script src="../data/menu.js"></script>
+<script src="pantalla.js"></script>
+</body>
+</html>

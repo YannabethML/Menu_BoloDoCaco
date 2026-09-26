@@ -1,0 +1,158 @@
+/* =============================================================
+   BOLO DO CACO FÁTIMA — Pantalla en bucle (16:9)
+   El escenario mide 1920x1080 fijos y se escala para llenar
+   cualquier televisor. Todas las medidas van en px de ese lienzo.
+   ============================================================= */
+
+@font-face{
+  font-family:'Fraunces';font-style:normal;font-weight:400 900;font-display:block;
+  src:url('../assets/fonts/fraunces-latin.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Fraunces';font-style:normal;font-weight:400 900;font-display:block;
+  src:url('../assets/fonts/fraunces-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF;
+}
+@font-face{
+  font-family:'Inter';font-style:normal;font-weight:400 700;font-display:block;
+  src:url('../assets/fonts/inter-latin.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Inter';font-style:normal;font-weight:400 700;font-display:block;
+  src:url('../assets/fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2C60-2C7F,U+A720-A7FF;
+}
+
+:root{
+  --c-base:#FAF6EE; --c-surface:#FFFCF7; --c-surface-2:#F4EDE0;
+  --c-ink:#221D1A; --c-ink-soft:#5B524B; --c-line:#E5DBCB;
+  --c-azulejo:#1D4E79; --c-terracota:#C0552A; --c-codea:#E0A64C;
+  --c-buganvilia:#B81E4E; --c-on-dark:#FAF6EE;
+  --f-display:'Fraunces',Georgia,serif;
+  --f-text:'Inter',system-ui,sans-serif;
+}
+
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:#0E0B09;overflow:hidden}
+body{font-family:var(--f-text);color:var(--c-ink);-webkit-font-smoothing:antialiased}
+img{display:block}
+
+/* ---------- escenario ---------- */
+.escenario{
+  position:absolute;top:50%;left:50%;
+  width:1920px;height:1080px;
+  transform-origin:center center;
+  overflow:hidden;background:var(--c-base);
+}
+.diapositivas{position:absolute;inset:0}
+
+.dia{position:absolute;inset:0;opacity:0;will-change:opacity}
+
+/* ---------- textura de azulejo ---------- */
+.azulejo{position:absolute;inset:0;
+  background:url('../assets/img/azulejo.svg') repeat;background-size:150px 150px;opacity:.05}
+.azulejo--oscuro{opacity:.07}
+
+/* ---------- filete ---------- */
+.filete{position:relative;display:block;width:200px;height:14px;color:var(--c-codea);
+  background:
+    linear-gradient(currentColor,currentColor) left center/72px 2px no-repeat,
+    linear-gradient(currentColor,currentColor) right center/72px 2px no-repeat}
+.filete::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:12px;
+  transform:translate(-50%,-50%) rotate(45deg);background:currentColor}
+.filete--terracota{color:var(--c-terracota)}
+.filete--centro{margin-inline:auto}
+
+/* ============ A · PORTADA ============ */
+.dia--portada{background:#17130F}
+.portada__foto{position:absolute;inset:0;background-size:cover;background-position:center 34%;
+  will-change:transform}
+.portada__velo{position:absolute;inset:0;background:
+  radial-gradient(58% 58% at 50% 52%, rgb(23 19 15 / .62) 0%, transparent 78%),
+  radial-gradient(70% 60% at 50% 40%, rgb(224 166 76 / .10) 0%, transparent 70%),
+  linear-gradient(to top, rgb(23 19 15 / .92) 0%, rgb(23 19 15 / .66) 45%, rgb(23 19 15 / .58) 100%)}
+.portada__caja{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:0;color:var(--c-on-dark);text-align:center}
+.portada__logo{width:172px;height:172px;margin-bottom:34px}
+.portada__marca{font-size:20px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--c-codea);margin-bottom:26px}
+.portada__titulo{font-family:var(--f-display);font-size:150px;font-weight:700;line-height:.95;
+  letter-spacing:-.03em;font-variation-settings:"SOFT" 60,"WONK" 1,"opsz" 144}
+.portada__lema{font-size:40px;color:rgb(250 246 238 / .88);margin-top:34px}
+.portada .filete{margin-top:30px}
+
+/* ============ B · PRODUCTO ============ */
+.dia--producto{display:grid;grid-template-columns:880px 1fr;background:var(--c-base);isolation:isolate}
+.prod__marco{position:relative;overflow:hidden;background:var(--c-surface-2)}
+.prod__foto{position:absolute;inset:-4%;background-size:cover;background-position:center;
+  will-change:transform}
+.prod__borde{position:absolute;top:0;right:0;bottom:0;width:120px;
+  background:linear-gradient(to right, transparent, var(--c-base) 92%)}
+.prod__caja{position:relative;display:flex;flex-direction:column;justify-content:center;
+  padding:0 110px 0 70px}
+.prod__caja::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:url('../assets/img/azulejo.svg') repeat;background-size:150px 150px;opacity:.04}
+.prod__categoria{font-size:22px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--c-terracota);margin-bottom:18px}
+.prod__nombre{font-family:var(--f-display);font-size:78px;font-weight:700;line-height:1.02;
+  letter-spacing:-.025em;font-variation-settings:"SOFT" 45,"WONK" 1,"opsz" 72;
+  text-wrap:balance;margin-bottom:26px}
+.prod__desc{font-size:32px;line-height:1.45;color:var(--c-ink-soft);max-width:740px}
+.prod__precio{font-family:var(--f-display);font-size:150px;font-weight:700;line-height:1;
+  color:var(--c-terracota);margin-top:44px;font-variant-numeric:tabular-nums}
+.prod__sello{display:inline-flex;align-self:flex-start;margin-top:30px;
+  padding:12px 26px;border-radius:999px;
+  font-size:22px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.sello--promo{background:var(--c-terracota);color:#FFF}
+.sello--estrella{background:var(--c-codea);color:#2B2008}
+.sello--novedad{background:var(--c-buganvilia);color:#FFF}
+.sello--tradicional{background:transparent;color:var(--c-azulejo);
+  box-shadow:inset 0 0 0 2px var(--c-azulejo)}
+
+/* ============ C · EVENTO ============ */
+.dia--evento{background:var(--c-surface-2);display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:0 200px}
+.ev__kicker{font-size:24px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--c-terracota);margin-bottom:20px}
+.ev__titulo{font-family:var(--f-display);font-size:130px;font-weight:700;line-height:1;
+  letter-spacing:-.03em;font-variation-settings:"SOFT" 50,"WONK" 1,"opsz" 120}
+.ev__sub{font-family:var(--f-display);font-size:38px;font-style:italic;color:var(--c-azulejo);
+  margin-top:28px}
+.ev__texto{font-size:30px;line-height:1.5;color:var(--c-ink-soft);max-width:1240px;margin-top:34px}
+.ev__datos{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:56px;
+  text-align:left;max-width:1320px}
+.ev__dato{padding-left:26px;border-left:4px solid var(--c-codea)}
+.ev__dato dt{font-size:19px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--c-terracota);margin-bottom:10px}
+.ev__dato dd{margin:0;font-size:25px;line-height:1.4;color:var(--c-ink-soft)}
+.dia--evento .filete{margin-top:26px}
+
+/* ============ D · CIERRE ============ */
+.dia--cierre{background:#1A1614;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;color:var(--c-on-dark)}
+.cierre__logo{width:230px;height:230px;margin-bottom:46px}
+.cierre__titulo{font-family:var(--f-display);font-size:100px;font-weight:700;line-height:1.05;
+  letter-spacing:-.025em;font-variation-settings:"SOFT" 55,"WONK" 1,"opsz" 96}
+.cierre__ig{display:inline-flex;align-items:center;gap:20px;margin-top:52px;
+  padding:22px 46px;border-radius:999px;border:2px solid rgb(250 246 238 / .28);
+  font-size:38px;font-weight:600}
+.cierre__ig svg{width:44px;height:44px}
+.dia--cierre .filete{margin-top:30px}
+
+/* ---------- firma fija ---------- */
+.firma{position:absolute;left:56px;top:46px;display:flex;align-items:center;gap:18px;
+  z-index:5;will-change:opacity}
+.firma__logo{width:74px;height:74px;border-radius:50%}
+.firma__texto{display:flex;flex-direction:column;line-height:1}
+.firma__texto strong{font-family:var(--f-display);font-size:30px;font-weight:700;
+  letter-spacing:-.01em}
+.firma__texto em{font-style:normal;font-size:16px;letter-spacing:.32em;text-transform:uppercase;
+  margin-top:7px;color:var(--c-terracota)}
+.firma--sobre-oscuro .firma__texto{color:var(--c-on-dark)}
+.firma--sobre-oscuro .firma__texto em{color:var(--c-codea)}
+.firma--oculta{opacity:0}
+
+/* ---------- barra de avance ---------- */
+.progreso{position:absolute;left:0;right:0;bottom:0;height:6px;
+  background:rgb(34 29 26 / .12);z-index:5}
+.progreso__barra{display:block;height:100%;width:0;background:var(--c-terracota)}
