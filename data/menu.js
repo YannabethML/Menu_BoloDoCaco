@@ -91,7 +91,7 @@ window.MENU = {
       category: "bolo-do-caco",
       price: 5,
       badges: ["estrella"],
-      image: null,
+      image: { file: "bolo-ajo.jpg", formats: ["avif", "webp"] },
       name: {
         es: "Bolo do Caco con Margarina de Ajo y Perejil",
         pt: "Bolo do Caco com Margarina de Alho e Salsa"
@@ -150,7 +150,7 @@ window.MENU = {
       category: "docaria",
       price: 10,
       badges: ["novedad"],
-      image: null,
+      image: { file: "bolo-nutella.jpg", formats: ["avif", "webp"] },
       name: { es: "Bolo do Caco con Nutella", pt: "Bolo do Caco com Nutella" },
       short: {
         es: "Nuestra piedra, en versión dulce.",
@@ -166,7 +166,7 @@ window.MENU = {
       category: "docaria",
       price: 12,
       badges: ["tradicional"],
-      image: null,
+      image: { file: "bolo-de-mel.jpg", formats: ["avif", "webp"] },
       name: { es: "Bolo de Mel", pt: "Bolo de Mel" },
       short: {
         es: "El bizcocho de miel de caña de Madeira.",
@@ -182,7 +182,7 @@ window.MENU = {
       category: "docaria",
       price: 8,
       badges: [],
-      image: null,
+      image: { file: "broas.jpg", formats: ["avif", "webp"] },
       name: { es: "Galletas Broas", pt: "Broas" },
       short: {
         es: "Galletas portuguesas, para llevar en el bolso.",

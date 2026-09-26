@@ -28,11 +28,9 @@ No hace falta tocar el HTML, el CSS ni el JS.
 
 ### Pendientes de rellenar
 
-1. **Número de WhatsApp** → `site.whatsapp` en `data/menu.js`, solo dígitos con
-   código de país (ej. `"584121234567"`). Mientras esté vacío, el botón flotante
-   enlaza a Instagram automáticamente.
-2. **Cuatro fotos** (margarina de ajo, Nutella, bolo de mel y broas) →
-   ver `assets/img/README.md`.
+Solo queda el **número de WhatsApp** → `site.whatsapp` en `data/menu.js`, con
+solo dígitos y código de país (ej. `"584121234567"`). Mientras esté vacío, el
+botón flotante enlaza a Instagram automáticamente.
 
 ## Vista previa
 

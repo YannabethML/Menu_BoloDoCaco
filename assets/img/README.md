@@ -12,21 +12,19 @@
 | `logo.png` | Logo maestro, 1200 px, fondo transparente |
 | `logo-256.png` | Logo de la cabecera y del icono de la app |
 | `logo-512.webp` | Logo para usos grandes (carteles, redes) |
-| `bolo-ovo.*` | **Sin asignar** — es el bolo relleno de huevo y perejil; no está en la carta |
+| `bolo-ajo.*` | Bolo do Caco con Margarina de Ajo y Perejil |
+| `bolo-nutella.*` | Bolo do Caco con Nutella |
+| `bolo-de-mel.*` | Bolo de Mel |
+| `broas.*` | Galletas Broas |
 
-Cada foto se genera en tres formatos: `.avif` (el más ligero), `.webp` y `.jpg`
-de reserva. El navegador elige el que admite, así que el menú carga rápido en
+Las fotos de producto se recortan a 1:1 (900 px) porque todas las tarjetas del
+menú son cuadradas. Cada una se genera en tres formatos: `.avif` (el más
+ligero), `.webp` y `.jpg` de reserva. El navegador elige el que admite, así que el menú carga rápido en
 datos móviles sin perder calidad.
 
 ## Faltan
 
-- **Bolo do Caco con Margarina de Ajo y Perejil** → `bolo-ajo.jpg`
-- **Bolo do Caco con Nutella** → `bolo-nutella.jpg`
-- **Bolo de Mel** → `bolo-de-mel.jpg`
-- **Galletas Broas** → `broas.jpg`
-
-Mientras no existan, el menú muestra un mosaico de azulejo con la inicial del
-producto: no se ve roto, se ve intencional.
+Ninguna: los siete productos de la carta tienen foto.
 
 ## Cómo añadir una foto nueva
 

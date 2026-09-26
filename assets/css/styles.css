@@ -412,16 +412,14 @@ a{color:var(--c-azulejo)}
   background:var(--c-surface);border:1px solid var(--c-line);
   border-radius:var(--r-lg);box-shadow:var(--sh-1);
   overflow:hidden;cursor:pointer;padding:0;text-align:left;
-  display:grid;grid-template-columns:5.5rem 1fr;align-items:stretch;
+  display:grid;grid-template-rows:auto 1fr;
   transition:transform .25s var(--ease),box-shadow .25s var(--ease);
 }
-@media (min-width:32rem){.card{grid-template-columns:1fr;grid-template-rows:auto auto}}
 .card:active{transform:scale(.99)}
 @media (hover:hover){.card:hover{box-shadow:var(--sh-2)}}
-.card__media{position:relative;height:100%;overflow:hidden;min-height:6.5rem}
+.card__media{position:relative;aspect-ratio:4/3;overflow:hidden}
 .card__media .media{position:absolute;inset:0;border-radius:0}
-@media (min-width:32rem){.card__media{aspect-ratio:4/3;height:auto;min-height:0}}
-.card__body{padding:.9rem 1rem;display:flex;flex-direction:column;gap:.3rem}
+.card__body{padding:1rem 1.1rem 1.15rem;display:flex;flex-direction:column;gap:.3rem}
 .card__name{font-size:1.05rem;letter-spacing:-.01em;text-wrap:balance;
   font-variation-settings:"SOFT" 40,"WONK" 1,"opsz" 20}
 .card__short{font-size:.8125rem;color:var(--c-ink-soft)}
