@@ -139,8 +139,8 @@ window.MENU = {
         pt: "Chouriço português, o recheio mais pedido da mesa."
       },
       long: {
-        es: "Chorizo portugués a la plancha dentro del bolo do caco recién hecho, con margarina de ajo y perejil. Sabor a fiesta de romaria.",
-        pt: "Chouriço português na chapa dentro do bolo do caco acabado de fazer, com margarina de alho e salsa. Sabor a festa de romaria."
+        es: "Chorizo portugués en lonchas gruesas dentro del bolo do caco recién hecho, con margarina de ajo y perejil. Sabor a fiesta de romaria.",
+        pt: "Chouriço português em fatias grossas dentro do bolo do caco acabado de fazer, com margarina de alho e salsa. Sabor a festa de romaria."
       }
     },
 
