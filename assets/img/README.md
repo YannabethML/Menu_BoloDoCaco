@@ -6,7 +6,7 @@
 |---|---|
 | `hero-bolo.*` | Portada (recortada 3:4, sin la marca de agua del original) |
 | `bolo-natural.*` | Bolo do Caco Grande |
-| `bolo-montserratina.*` | Bolo do Caco con Chorizo Ahumado Montserratina |
+| `bolo-montserratina.*` | Bolo do Caco con Chorizo Ahumado Montserratina — **foto real del producto**, recortada del fondo y montada sobre mantel limpio |
 | `bolo-portugues.*` | Bolo do Caco con Chorizo Portugués |
 | `og-cover.jpg` | Vista previa al compartir el enlace (1200 × 630) |
 | `logo.png` | Logo maestro, 1200 px, fondo transparente |
