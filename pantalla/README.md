@@ -1,9 +1,12 @@
 # Pantalla del stand
 
-Bucle de 60 segundos en 16:9 para el televisor del stand. Nueve pantallas:
+Bucle de 51 segundos en 16:9 para el televisor del stand. Ocho pantallas:
 portada, el bolo solo, la promoción de dos, el de margarina de ajo, los dos
-chorizos juntos, los dos Nutella juntos, el bolo de mel con las broas, el
-evento del día y el cierre con el Instagram.
+chorizos juntos, los dos Nutella juntos, el bolo de mel con las broas y el
+cierre con el Instagram.
+
+Si se activa el evento del día en `data/menu.js` aparece una pantalla más,
+antes del cierre, y el bucle pasa a 60 segundos.
 
 Los productos que se comparan entre sí comparten pantalla: así se ve la
 diferencia de precio de un vistazo, sin tener que recordar la anterior.

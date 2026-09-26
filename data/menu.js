@@ -257,7 +257,7 @@ window.MENU = {
          (también su pestaña en la barra de categorías).
      --------------------------------------------------------- */
   evento: {
-    active: true,
+    active: false,          // ← ponlo en true para que vuelva a salir
     name:     { es: "A Vindima",  pt: "A Vindima" },
     subtitle: { es: "La fiesta de la vendimia portuguesa",
                 pt: "A festa das vindimas portuguesas" },

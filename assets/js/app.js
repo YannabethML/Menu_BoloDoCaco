@@ -138,11 +138,13 @@
       menuRoot.appendChild(sec);
     });
 
-    /* chip extra para la sección de eventos */
-    var liEv = el('li');
-    liEv.innerHTML = '<a class="chip" href="#evento" data-chip="evento">' +
-      esc(ui('eventoChip')) + '</a>';
-    catnavList.appendChild(liEv);
+    /* pestaña del evento del día, solo si hay uno activo */
+    if (DATA.evento && DATA.evento.active) {
+      var liEv = el('li');
+      liEv.innerHTML = '<a class="chip" href="#evento" data-chip="evento">' +
+        esc(ui('eventoChip')) + '</a>';
+      catnavList.appendChild(liEv);
+    }
 
     catnavList.parentElement.setAttribute('aria-label', ui('menuLabel'));
   }
