@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+  <!-- Patrón de azulejo portugués, teselable. Color medio que funciona
+       sobre fondo claro y oscuro; la opacidad se controla desde el CSS. -->
+  <g fill="none" stroke="#3C6E96" stroke-width="1.1">
+    <circle cx="22" cy="22" r="13"/>
+    <path d="M22 9 35 22 22 35 9 22Z"/>
+    <circle cx="0" cy="0" r="7"/><circle cx="44" cy="0" r="7"/>
+    <circle cx="0" cy="44" r="7"/><circle cx="44" cy="44" r="7"/>
+    <path d="M22 0v4M22 40v4M0 22h4M40 22h4"/>
+  </g>
+  <circle cx="22" cy="22" r="2.2" fill="#3C6E96"/>
+</svg>
