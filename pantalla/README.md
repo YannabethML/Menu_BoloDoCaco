@@ -3,7 +3,7 @@
 Bucle de 57 segundos en 16:9 para el televisor del stand. Nueve pantallas:
 portada, el bolo solo, la promoción de dos, el de margarina de ajo, los dos
 chorizos juntos, el de Nutella, el bolo de mel con las broas, el chorizo por
-kilo con la mantequilla en pote, y el cierre con el Instagram.
+kilo con la margarina, y el cierre con el Instagram.
 
 El evento del día **no sale aquí**, aunque sí esté en el menú del QR: son
 dos interruptores distintos a propósito. Para que aparezca también en el

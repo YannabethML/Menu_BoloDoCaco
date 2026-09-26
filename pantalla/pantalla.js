@@ -35,7 +35,7 @@
   var PAREJAS = [
     ['bolo-monserratina', 'bolo-portugues'],
     ['bolo-de-mel', 'broas'],
-    ['chorizo-kilo', 'mantequilla-ajo']
+    ['chorizo-kilo', 'margarina-ajo']
   ];
 
   function t(o) { return o ? (o[LANG] || o.es || '') : ''; }

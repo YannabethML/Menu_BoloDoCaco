@@ -119,7 +119,7 @@ window.MENU = {
         pt: "Bolo do Caco com Margarina de Alho e Salsa"
       },
       short: {
-        es: "El de siempre: ajo, perejil y mucha mantequilla.",
+        es: "El de siempre: ajo, perejil y mucha margarina.",
         pt: "O de sempre: alho, salsa e muita margarina."
       },
       long: {
@@ -235,20 +235,20 @@ window.MENU = {
       }
     },
     {
-      id: "mantequilla-ajo",
+      id: "margarina-ajo",
       category: "para-llevar",
       price: 6,
-      unit: { es: "el pote", pt: "o boião" },
+      unit: { es: "la unidad", pt: "a unidade" },
       badges: [],
-      image: { file: "mantequilla-ajo.jpg", formats: ["avif", "webp"] },
-      name: { es: "Mantequilla de Ajo y Perejil", pt: "Manteiga de Alho e Salsa" },
+      image: { file: "margarina-ajo.jpg", formats: ["avif", "webp"] },
+      name: { es: "Margarina de Ajo y Perejil", pt: "Margarina de Alho e Salsa" },
       short: {
-        es: "La que untamos en el bolo, en pote.",
-        pt: "A que barramos no bolo, em boião."
+        es: "La que untamos en el bolo, en su pote.",
+        pt: "A que barramos no bolo, no seu boião."
       },
       long: {
-        es: "La misma mantequilla de ajo y perejil que lleva nuestro bolo do caco, en pote para llevar. Va bien con pan, con carnes o con lo que se te ocurra.",
-        pt: "A mesma manteiga de alho e salsa que leva o nosso bolo do caco, em boião para levar. Vai bem com pão, com carnes ou com o que lhe apetecer."
+        es: "La misma margarina de ajo y perejil que lleva nuestro bolo do caco, en pote para llevar. Va bien con pan, con carnes o con lo que se te ocurra.",
+        pt: "A mesma margarina de alho e salsa que leva o nosso bolo do caco, em boião para levar. Vai bem com pão, com carnes ou com o que lhe apetecer."
       }
     }
   ],
