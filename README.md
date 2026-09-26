@@ -28,6 +28,10 @@ evento: {
 Con `active: false` desaparecen tanto la sección como su pestaña en la barra
 de categorías, sin tocar nada más.
 
+Esto manda solo sobre el menú del QR. La pantalla del televisor tiene su
+propio interruptor, `MOSTRAR_EVENTO` en `pantalla/pantalla.js`, para poder
+contar el evento en el móvil sin alargar el bucle del stand.
+
 ## Cómo editar el menú
 
 Todo el contenido está en un solo archivo: **`data/menu.js`**.

@@ -26,6 +26,10 @@
     cierre: 5.5
   };
 
+  /* ¿Sale el evento del día en la pantalla del stand? Es independiente del
+     menú del QR: allí se controla con evento.active en data/menu.js. */
+  var MOSTRAR_EVENTO = false;
+
   /* Productos que comparten diapositiva. El menú del QR los sigue mostrando
      por separado: esto es solo cómo se agrupan en la pantalla del stand. */
   var PAREJAS = [
@@ -212,7 +216,7 @@
           }
         });
     });
-    if (DATA.evento && DATA.evento.active) lista.push(evento());
+    if (MOSTRAR_EVENTO && DATA.evento && DATA.evento.active) lista.push(evento());
     lista.push(cierre());
 
     var cont = document.getElementById('diapositivas');

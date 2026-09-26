@@ -5,8 +5,10 @@ portada, el bolo solo, la promoción de dos, el de margarina de ajo, los dos
 chorizos juntos, los dos Nutella juntos, el bolo de mel con las broas y el
 cierre con el Instagram.
 
-Si se activa el evento del día en `data/menu.js` aparece una pantalla más,
-antes del cierre, y el bucle pasa a 60 segundos.
+El evento del día **no sale aquí**, aunque sí esté en el menú del QR: son
+dos interruptores distintos a propósito. Para que aparezca también en el
+televisor, pon `MOSTRAR_EVENTO = true` en `pantalla/pantalla.js`; entonces se
+añade una pantalla antes del cierre y el bucle pasa a 60 segundos.
 
 Los productos que se comparan entre sí comparten pantalla: así se ve la
 diferencia de precio de un vistazo, sin tener que recordar la anterior.
@@ -48,6 +50,7 @@ En `pantalla/pantalla.js`, arriba del todo:
 | `DURACION` | Segundos de cada tipo de pantalla: portada, producto, pareja, evento y cierre |
 | `FUNDIDO` | Segundos de cruce entre una y la siguiente |
 | `PAREJAS` | Qué productos comparten pantalla, por su `id` |
+| `MOSTRAR_EVENTO` | Si el evento del día sale también en el televisor |
 | `LANG` | `'es'` o `'pt'` — el idioma de la pantalla del stand |
 
 Al añadir un producto en `data/menu.js` aparece solo, en su propia pantalla.
