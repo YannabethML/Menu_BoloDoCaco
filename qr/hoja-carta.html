@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Tarjetas QR — Bolo do Caco Fátima</title>
+<style>
+/* =========================================================
+   Hoja tamaño carta con 6 tarjetas para recortar.
+   Las medidas van en milímetros para que al imprimir salgan
+   del tamaño exacto, sin depender de la pantalla.
+   Añade ?blanco a la dirección para la versión que ahorra tinta.
+   ========================================================= */
+
+@font-face{font-family:'Fraunces';src:url('../assets/fonts/fraunces-latin.woff2') format('woff2');
+  font-weight:400 900;font-display:block}
+@font-face{font-family:'Inter';src:url('../assets/fonts/inter-latin.woff2') format('woff2');
+  font-weight:400 700;font-display:block}
+
+@page{ size:letter; margin:8mm; }
+
+*{box-sizing:border-box;margin:0}
+html,body{width:199.9mm}
+body{font-family:'Inter',sans-serif;color:#221D1A;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+
+.hoja{display:grid;grid-template-columns:repeat(2,99.95mm);grid-template-rows:repeat(3,87.8mm)}
+
+.tarjeta{
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:3.5mm 6mm;
+  background:#FAF6EE;
+  border:0.25mm dashed #C9BCA6;      /* guía de corte */
+  text-align:center;
+}
+body.blanco .tarjeta{background:#FFFFFF}
+
+/* ---- cabecera de la tarjeta ---- */
+.logo{width:10mm;height:10mm;border-radius:50%}
+.marca{margin-top:1.6mm;font-size:2.5mm;font-weight:700;letter-spacing:.3em;
+  text-transform:uppercase;color:#C0552A}
+
+/* ---- el código ---- */
+.codigo{position:relative;flex:0 0 auto;width:45mm;height:45mm;margin-top:2.6mm}
+.codigo__qr{position:absolute;inset:0;
+  background:url('qr-menu-marca.svg') center/contain no-repeat}
+body.blanco .codigo__qr{background-image:url('qr-menu-negro.svg')}
+.codigo__disco{position:absolute;left:50%;top:50%;width:10.4mm;height:10.4mm;
+  transform:translate(-50%,-50%);border-radius:50%;background:#FAF6EE}
+body.blanco .codigo__disco{background:#FFFFFF}
+.codigo__logo{position:absolute;left:50%;top:50%;width:9mm;height:9mm;
+  transform:translate(-50%,-50%);border-radius:50%}
+
+/* ---- pie de la tarjeta ---- */
+.llamada{margin-top:2.6mm;font-family:'Fraunces',serif;font-size:4.2mm;font-weight:700;
+  line-height:1.15;letter-spacing:-.01em}
+.llamada em{display:block;font-style:italic;font-weight:400;font-size:3.3mm;
+  color:#5B524B;margin-top:.7mm}
+.ig{margin-top:2mm;font-size:2.8mm;font-weight:600;color:#1D4E79;letter-spacing:.02em}
+</style>
+</head>
+<body>
+  <div class="hoja" id="hoja"></div>
+
+<script>
+  if (location.search.indexOf('blanco') > -1) document.body.classList.add('blanco');
+
+  var tarjeta =
+    '<div class="tarjeta">' +
+      '<img class="logo" src="../assets/img/logo-256.png" alt="">' +
+      '<p class="marca">Bolo do Caco Fátima</p>' +
+      '<div class="codigo">' +
+        '<div class="codigo__qr"></div>' +
+        '<div class="codigo__disco"></div>' +
+        '<img class="codigo__logo" src="../assets/img/logo-256.png" alt="">' +
+      '</div>' +
+      '<p class="llamada">Escanea para ver el menú' +
+        '<em>Escaneie para ver o menu</em></p>' +
+      '<p class="ig">@bolodocacofatima_</p>' +
+    '</div>';
+
+  document.getElementById('hoja').innerHTML = new Array(6).fill(tarjeta).join('');
+</script>
+</body>
+</html>
