@@ -109,6 +109,31 @@ img{display:block}
 .sello--tradicional{background:transparent;color:var(--c-azulejo);
   box-shadow:inset 0 0 0 2px var(--c-azulejo)}
 
+/* ============ B2 · DOS PRODUCTOS JUNTOS ============ */
+.dia--pareja{background:var(--c-base);display:flex;align-items:center;justify-content:center}
+.par__todo{width:100%;padding:0 110px}
+.par__categoria{text-align:center;margin-bottom:38px}
+.par__rejilla{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.par__col{display:flex;flex-direction:column;align-items:center;text-align:center}
+.par__marco{position:relative;width:100%;aspect-ratio:1;max-width:468px;overflow:hidden;
+  border-radius:20px;background:var(--c-surface-2);
+  box-shadow:0 3px 10px rgb(34 29 26 / .10), 0 26px 50px -24px rgb(34 29 26 / .40)}
+.par__foto{position:absolute;inset:-4%;background-size:cover;background-position:center;
+  will-change:transform}
+.par__sello{position:absolute;left:18px;top:18px;
+  padding:9px 20px;border-radius:999px;
+  font-size:18px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+/* alturas mínimas de dos líneas: así los precios de las dos columnas
+   quedan a la misma altura aunque un nombre ocupe una línea y el otro dos */
+.par__nombre{font-family:var(--f-display);font-size:42px;font-weight:700;line-height:1.08;
+  letter-spacing:-.02em;font-variation-settings:"SOFT" 45,"WONK" 1,"opsz" 40;
+  text-wrap:balance;margin-top:32px;min-height:2.16em;
+  display:flex;align-items:flex-start;justify-content:center}
+.par__desc{font-size:26px;line-height:1.35;color:var(--c-ink-soft);margin-top:12px;
+  max-width:560px;min-height:2.7em}
+.par__precio{font-family:var(--f-display);font-size:96px;font-weight:700;line-height:1;
+  color:var(--c-terracota);margin-top:22px;font-variant-numeric:tabular-nums}
+
 /* ============ C · EVENTO ============ */
 .dia--evento{background:var(--c-surface-2);display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;padding:0 200px}

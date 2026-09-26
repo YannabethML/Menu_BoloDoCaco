@@ -1,8 +1,12 @@
 # Pantalla del stand
 
-Bucle de 72 segundos en 16:9 para el televisor del stand. Doce pantallas:
-portada, los cinco Bolo do Caco, los cuatro dulces, el evento del día y el
-cierre con el Instagram.
+Bucle de 60 segundos en 16:9 para el televisor del stand. Nueve pantallas:
+portada, el bolo solo, la promoción de dos, el de margarina de ajo, los dos
+chorizos juntos, los dos Nutella juntos, el bolo de mel con las broas, el
+evento del día y el cierre con el Instagram.
+
+Los productos que se comparan entre sí comparten pantalla: así se ve la
+diferencia de precio de un vistazo, sin tener que recordar la anterior.
 
 ## Dos formas de usarlo
 
@@ -38,9 +42,12 @@ En `pantalla/pantalla.js`, arriba del todo:
 
 | Variable | Qué hace |
 |---|---|
-| `DURACION` | Segundos por pantalla (6 por defecto) |
+| `DURACION` | Segundos de cada tipo de pantalla: portada, producto, pareja, evento y cierre |
 | `FUNDIDO` | Segundos de cruce entre una y la siguiente |
+| `PAREJAS` | Qué productos comparten pantalla, por su `id` |
 | `LANG` | `'es'` o `'pt'` — el idioma de la pantalla del stand |
 
-El bucle dura `DURACION × número de pantallas`. Al añadir un producto en
-`data/menu.js` aparece solo, y el video se alarga seis segundos.
+Al añadir un producto en `data/menu.js` aparece solo, en su propia pantalla.
+Para que comparta pantalla con otro, añade la pareja a `PAREJAS`. Si un
+producto de una pareja se borra, el otro pasa a mostrarse solo: no se rompe
+nada.

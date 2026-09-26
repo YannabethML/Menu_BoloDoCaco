@@ -14,8 +14,25 @@
   if (!DATA) { console.error('[pantalla] falta data/menu.js'); return; }
 
   var LANG = 'es';          // idioma de la pantalla del stand
-  var DURACION = 6.0;       // segundos que dura cada diapositiva
   var FUNDIDO = 0.9;        // segundos de cruce entre una y la siguiente
+
+  /* Segundos de cada tipo de diapositiva. Las parejas y el evento duran más
+     porque hay más que leer. */
+  var DURACION = {
+    portada: 5.5,
+    producto: 6.0,
+    pareja: 7.5,
+    evento: 9.0,
+    cierre: 5.5
+  };
+
+  /* Productos que comparten diapositiva. El menú del QR los sigue mostrando
+     por separado: esto es solo cómo se agrupan en la pantalla del stand. */
+  var PAREJAS = [
+    ['bolo-monserratina', 'bolo-portugues'],
+    ['bolo-nutella-peq', 'bolo-nutella-gde'],
+    ['bolo-de-mel', 'broas']
+  ];
 
   function t(o) { return o ? (o[LANG] || o.es || '') : ''; }
   function ui(k) { return DATA.ui[LANG][k] || DATA.ui.es[k] || ''; }
@@ -51,6 +68,7 @@
 
   function portada() {
     return {
+      dur: DURACION.portada,
       oscura: true,
       firma: false,
       html:
@@ -72,6 +90,7 @@
     var etiqueta = (p.badges && p.badges[0]) || '';
     var nombreEtiqueta = etiqueta ? (DATA.ui[LANG].badges || {})[etiqueta] || etiqueta : '';
     return {
+      dur: DURACION.producto,
       oscura: false,
       firma: true,
       html:
@@ -92,6 +111,37 @@
     };
   }
 
+  function pareja(ps, categoria) {
+    var columnas = ps.map(function (p) {
+      var etiqueta = (p.badges && p.badges[0]) || '';
+      var nombreEtiqueta = etiqueta ? (DATA.ui[LANG].badges || {})[etiqueta] || etiqueta : '';
+      return '<div class="par__col">' +
+        '<div class="par__marco"><div class="par__foto" data-kb style="background-image:' +
+          fondo(p.image) + '"></div>' +
+          (etiqueta ? '<span class="par__sello sello--' + esc(etiqueta) + '">' +
+                      esc(nombreEtiqueta) + '</span>' : '') +
+        '</div>' +
+        '<h3 class="par__nombre">' + esc(t(p.name)) + '</h3>' +
+        '<p class="par__desc">' + esc(t(p.short)) + '</p>' +
+        '<p class="par__precio">' + esc(dinero(p.price)) + '</p>' +
+      '</div>';
+    }).join('');
+
+    return {
+      dur: DURACION.pareja,
+      oscura: false,
+      firma: true,
+      html:
+        '<div class="dia dia--pareja">' +
+          '<div class="azulejo"></div>' +
+          '<div class="par__todo" data-entra>' +
+            '<p class="prod__categoria par__categoria">' + esc(t(categoria.name)) + '</p>' +
+            '<div class="par__rejilla">' + columnas + '</div>' +
+          '</div>' +
+        '</div>'
+    };
+  }
+
   function evento() {
     var ev = DATA.evento;
     var datos = (ev.facts || []).map(function (f) {
@@ -99,6 +149,7 @@
              '<dd>' + esc(t(f.value)) + '</dd></div>';
     }).join('');
     return {
+      dur: DURACION.evento,
       oscura: false,
       firma: true,
       html:
@@ -118,6 +169,7 @@
 
   function cierre() {
     return {
+      dur: DURACION.cierre,
       oscura: true,
       firma: false,
       html:
@@ -135,19 +187,43 @@
 
   function construir() {
     lista.push(portada());
+
+    var yaPuesto = {};
     DATA.categories.forEach(function (cat) {
       DATA.products.filter(function (p) { return p.category === cat.id; })
-                   .forEach(function (p) { lista.push(producto(p, cat)); });
+        .forEach(function (p) {
+          if (yaPuesto[p.id]) return;
+
+          var grupo = null;
+          for (var i = 0; i < PAREJAS.length; i++) {
+            if (PAREJAS[i].indexOf(p.id) > -1) { grupo = PAREJAS[i]; break; }
+          }
+
+          if (grupo) {
+            var ps = grupo.map(function (id) {
+              return DATA.products.filter(function (q) { return q.id === id; })[0];
+            }).filter(Boolean);
+            ps.forEach(function (q) { yaPuesto[q.id] = true; });
+            /* si algún producto del grupo ya no existe, se muestra solo */
+            lista.push(ps.length > 1 ? pareja(ps, cat) : producto(ps[0] || p, cat));
+          } else {
+            yaPuesto[p.id] = true;
+            lista.push(producto(p, cat));
+          }
+        });
     });
     if (DATA.evento && DATA.evento.active) lista.push(evento());
     lista.push(cierre());
 
     var cont = document.getElementById('diapositivas');
     cont.innerHTML = lista.map(function (d) { return d.html; }).join('');
+    var acumulado = 0;
     Array.prototype.forEach.call(cont.children, function (nodo, i) {
       lista[i].nodo = nodo;
-      lista[i].kb = nodo.querySelector('[data-kb]');
+      lista[i].fotos = Array.prototype.slice.call(nodo.querySelectorAll('[data-kb]'));
       lista[i].entra = nodo.querySelector('[data-entra]');
+      lista[i].inicio = acumulado;
+      acumulado += lista[i].dur;
     });
   }
 
@@ -157,11 +233,11 @@
   var firma = document.getElementById('firma');
   var barra = document.getElementById('progresoBarra');
 
-  function opacidad(a) {
+  function opacidad(a, dur) {
     /* a = segundos transcurridos desde que empieza esta diapositiva */
     if (a >= -FUNDIDO && a < 0) return (a + FUNDIDO) / FUNDIDO;   // entrando
-    if (a >= 0 && a <= DURACION - FUNDIDO) return 1;              // a plena vista
-    if (a > DURACION - FUNDIDO && a <= DURACION) return (DURACION - a) / FUNDIDO;
+    if (a >= 0 && a <= dur - FUNDIDO) return 1;                   // a plena vista
+    if (a > dur - FUNDIDO && a <= dur) return (dur - a) / FUNDIDO;
     return 0;
   }
 
@@ -172,16 +248,18 @@
     var visible = 0, mayor = -1;
 
     lista.forEach(function (d, i) {
-      var a = t0 - i * DURACION;
+      var a = t0 - d.inicio;
       /* el bucle también cruza del final al principio */
-      var op = Math.max(opacidad(a), opacidad(a - TOTAL), opacidad(a + TOTAL));
+      var op = Math.max(opacidad(a, d.dur), opacidad(a - TOTAL, d.dur), opacidad(a + TOTAL, d.dur));
       d.nodo.style.opacity = op;
       if (op > mayor) { mayor = op; visible = i; }
 
       if (op > 0) {
-        var local = Math.max(0, Math.min(DURACION, a < -1 ? a + TOTAL : a));
+        var local = Math.max(0, Math.min(d.dur, a < -1 ? a + TOTAL : a));
         /* acercamiento muy lento de la foto */
-        if (d.kb) d.kb.style.transform = 'scale(' + (1.05 - 0.05 * (local / DURACION)).toFixed(4) + ')';
+        d.fotos.forEach(function (f) {
+          f.style.transform = 'scale(' + (1.05 - 0.05 * (local / d.dur)).toFixed(4) + ')';
+        });
         /* el texto sube al entrar */
         if (d.entra) {
           var e = suave(local / 0.85);
@@ -208,11 +286,11 @@
   /* ---------- arranque ---------- */
 
   construir();
-  TOTAL = lista.length * DURACION;
+  TOTAL = lista.reduce(function (s, d) { return s + d.dur; }, 0);
   encajar();
   window.addEventListener('resize', encajar);
 
-  window.PANTALLA = { pintar: pintar, total: TOTAL, duracion: DURACION, diapositivas: lista.length };
+  window.PANTALLA = { pintar: pintar, total: TOTAL, diapositivas: lista.length };
 
   /* Reproducción automática. La grabación la desactiva con ?manual
      para ir fotograma a fotograma. */
