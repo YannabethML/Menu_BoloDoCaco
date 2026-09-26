@@ -293,6 +293,54 @@
     e.style.transform = 'translate(-50%,-50%) scale(' + k + ')';
   }
 
+  /* ---------- para verla en el televisor ---------- */
+
+  /* Evita que la pantalla se apague sola mientras corre el bucle.
+     Se vuelve a pedir si el televisor la suspende y regresa. */
+  function mantenerDespierta() {
+    if (!('wakeLock' in navigator)) return;
+    var cerrojo = null;
+    function pedir() {
+      navigator.wakeLock.request('screen').then(function (c) {
+        cerrojo = c;
+        c.addEventListener('release', function () { cerrojo = null; });
+      }).catch(function () { /* el navegador lo negó: seguimos igual */ });
+    }
+    pedir();
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible' && !cerrojo) pedir();
+    });
+  }
+
+  /* Botón de pantalla completa que se esconde solo, para no estorbar.
+     Vuelve a aparecer al mover el ratón o pulsar cualquier tecla del control. */
+  function botonPantallaCompleta() {
+    var b = document.createElement('button');
+    b.className = 'completa';
+    b.type = 'button';
+    b.textContent = 'Pantalla completa';
+    b.addEventListener('click', function () {
+      var d = document.documentElement;
+      if (document.fullscreenElement) {
+        (document.exitFullscreen || function(){}).call(document);
+      } else {
+        (d.requestFullscreen || d.webkitRequestFullscreen || function(){}).call(d);
+      }
+    });
+    document.body.appendChild(b);
+
+    var reloj;
+    function mostrar() {
+      b.classList.remove('completa--oculto');
+      clearTimeout(reloj);
+      reloj = setTimeout(function () { b.classList.add('completa--oculto'); }, 4000);
+    }
+    ['mousemove', 'keydown', 'click', 'touchstart'].forEach(function (e) {
+      document.addEventListener(e, mostrar, { passive: true });
+    });
+    mostrar();
+  }
+
   /* ---------- arranque ---------- */
 
   construir();
@@ -305,6 +353,8 @@
   /* Reproducción automática. La grabación la desactiva con ?manual
      para ir fotograma a fotograma. */
   if (location.search.indexOf('manual') === -1) {
+    mantenerDespierta();
+    botonPantallaCompleta();
     var inicio = null;
     (function paso(ahora) {
       if (inicio === null) inicio = ahora;

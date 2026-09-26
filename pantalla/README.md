@@ -20,10 +20,18 @@ conéctalo al televisor y activa la repetición automática (en el menú del
 televisor suele llamarse *Repeat* o *Repetir todo*). 1920×1080, H.264, sin
 audio: lo reproduce cualquier televisor de los últimos quince años.
 
-**Laptop o tablet conectada al televisor** → abre `pantalla/index.html`
-(o `.../pantalla/` en la web publicada) y pulsa **F11** para pantalla
-completa. Se ve más nítido que el video y los precios salen directamente de
-`data/menu.js`, así que se actualizan solos.
+**Televisor con navegador, o laptop conectada** → abre
+**https://bolodocacofatima.github.io/pantalla/** y pulsa el botón de pantalla
+completa que sale abajo a la derecha (en una laptop, también sirve **F11**).
+El botón se esconde solo a los cuatro segundos y vuelve al mover el ratón o
+pulsar cualquier tecla del control.
+
+Es la mejor opción de las dos: se ve más nítido que el video, los precios
+salen directamente de `data/menu.js` y se actualizan solos. La página pide
+además que la pantalla no se apague mientras corre el bucle.
+
+Una vez cargada no necesita internet: todo queda descargado y el bucle sigue
+aunque se caiga la conexión.
 
 ## Cuando cambien los precios
 

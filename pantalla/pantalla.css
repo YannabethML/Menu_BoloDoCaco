@@ -182,6 +182,18 @@ img{display:block}
 .firma--sobre-oscuro .firma__texto em{color:var(--c-codea)}
 .firma--oculta{opacity:0}
 
+/* ---------- botón de pantalla completa ---------- */
+.completa{
+  position:fixed;right:28px;bottom:28px;z-index:20;
+  padding:16px 28px;border:0;border-radius:999px;cursor:pointer;
+  background:rgb(34 29 26 / .78);color:#FAF6EE;
+  font-family:var(--f-text);font-size:20px;font-weight:600;
+  backdrop-filter:blur(6px);
+  transition:opacity .4s ease;
+}
+.completa:focus-visible{outline:3px solid var(--c-codea);outline-offset:3px}
+.completa--oculto{opacity:0;pointer-events:none}
+
 /* ---------- barra de avance ---------- */
 .progreso{position:absolute;left:0;right:0;bottom:0;height:6px;
   background:rgb(34 29 26 / .12);z-index:5}
