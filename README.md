@@ -7,6 +7,27 @@ sin dependencias: HTML5, CSS3 y JavaScript vanilla.
 
 ---
 
+## Antes de cada evento
+
+El menú se escanea en el stand, así que la última sección cuenta **qué se
+celebra ese día**. Se cambia en `data/menu.js`, en el bloque `evento`:
+
+```js
+evento: {
+  active: true,                       // false = la sección desaparece sola
+  name:     { es: "A Vindima", pt: "A Vindima" },
+  subtitle: { es: "La fiesta de la vendimia portuguesa", pt: "..." },
+  text:     { es: "Dos o tres frases sobre la tradición...", pt: "..." },
+  facts: [                            // opcional, hasta tres
+    { label: { es: "Cuándo", pt: "Quando" },
+      value: { es: "De finales de agosto a octubre", pt: "..." } }
+  ]
+}
+```
+
+Con `active: false` desaparecen tanto la sección como su pestaña en la barra
+de categorías, sin tocar nada más.
+
 ## Cómo editar el menú
 
 Todo el contenido está en un solo archivo: **`data/menu.js`**.
@@ -58,6 +79,7 @@ favicon.svg
 data/menu.js            ← ÚNICO archivo de contenido
 assets/css/styles.css   Tokens de color, tipografía y componentes
 assets/js/app.js        Render, idioma, carrusel, scroll-spy, bottom sheet
+                        y la sección del evento del día
 assets/img/             Fotos (avif/webp/jpg), logo y patrón de azulejo
 tools/                  Script para convertir fotos nuevas
 assets/fonts/           Fraunces + Inter (variables, subsets, OFL)

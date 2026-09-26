@@ -72,14 +72,15 @@
     <!-- Las secciones del menú se generan aquí desde data/menu.js -->
   </div>
 
-  <!-- ============ EVENTOS ============ -->
-  <section class="events" id="eventos">
+  <!-- ============ EL EVENTO DEL DÍA ============ -->
+  <section class="evento" id="evento" aria-labelledby="evento-title" hidden>
     <div class="wrap">
-      <p class="kicker" data-i18n="ui.eventsKicker">Dónde encontrarnos</p>
-      <h2 class="section__title" data-i18n="ui.eventsTitle">Nos movemos con los eventos</h2>
+      <p class="kicker" id="eventoKicker"></p>
+      <h2 class="section__title" id="evento-title"></h2>
       <span class="flourish flourish--dark" aria-hidden="true"></span>
-      <p class="events__text" data-i18n="ui.eventsText">No tenemos local fijo: llevamos la piedra a los eventos de la comunidad portuguesa.</p>
-      <div class="events__actions" id="eventsActions"></div>
+      <p class="evento__subtitle" id="eventoSubtitle"></p>
+      <p class="evento__text" id="eventoText"></p>
+      <dl class="facts" id="eventoFacts"></dl>
     </div>
   </section>
 
@@ -89,6 +90,7 @@
 <footer class="footer">
   <div class="wrap">
     <p class="footer__brand">Bolo do Caco Fátima, C.A.</p>
+    <a class="footer__ig" id="footerIg" href="#" target="_blank" rel="noopener"></a>
     <p class="footer__note" data-i18n="ui.priceNote">Precios en dólares</p>
   </div>
 </footer>

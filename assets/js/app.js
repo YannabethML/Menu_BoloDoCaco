@@ -61,6 +61,7 @@
     instagram: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>',
     dough: '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M4 21c0-5 5.4-9 12-9s12 4 12 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 21h26a1 1 0 010 2H3a1 1 0 010-2z" fill="currentColor"/><path d="M11 16.5c1.2-1 2.6-1 3.8 0M17.5 15c1.2-1 2.6-1 3.8 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/></svg>',
     stone: '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M5 24l3-5h16l3 5z" fill="currentColor" opacity=".25"/><path d="M5 24h22" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><ellipse cx="16" cy="15" rx="8" ry="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M11 9.5c0-1.6 1-2.2 1-3.5M16 8.5c0-1.6 1-2.2 1-3.5M21 9.5c0-1.6 1-2.2 1-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".6"/></svg>',
+    stand: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 10h16v9a1 1 0 01-1 1H5a1 1 0 01-1-1z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 10l1.6-4.4A1 1 0 015.5 5h13a1 1 0 01.9.6L21 10c0 1.4-1.1 2.5-2.5 2.5S16 11.4 16 10c0 1.4-1.1 2.5-2.5 2.5S11 11.4 11 10c0 1.4-1.1 2.5-2.5 2.5S6 11.4 6 10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 20v-4.5h4V20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
     butter: '<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M6 17c0-4.4 4.5-8 10-8s10 3.6 10 8v1c0 3.3-4.5 6-10 6S6 21.3 6 18z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6 17c3 2.4 7 3.4 10 3.4S23 19.4 26 17" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".6"/><path d="M13 12.5l1.5 1.5 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
   };
 
@@ -140,8 +141,8 @@
 
     /* chip extra para la sección de eventos */
     var liEv = el('li');
-    liEv.innerHTML = '<a class="chip" href="#eventos" data-chip="eventos">' +
-      esc(ui('eventsChip')) + '</a>';
+    liEv.innerHTML = '<a class="chip" href="#evento" data-chip="evento">' +
+      esc(ui('eventoChip')) + '</a>';
     catnavList.appendChild(liEv);
 
     catnavList.parentElement.setAttribute('aria-label', ui('menuLabel'));
@@ -251,37 +252,45 @@
     return 'https://instagram.com/' + DATA.site.instagram;
   }
 
-  function renderEvents() {
-    var box = document.getElementById('eventsActions');
-    box.innerHTML = '';
-    var wa = waLink(ui('waGeneral'));
-    if (wa) {
-      var a = el('a', 'btn btn--primary', ICON.whatsapp + '<span>' + esc(ui('order')) + '</span>');
-      a.href = wa; a.target = '_blank'; a.rel = 'noopener';
-      box.appendChild(a);
-    }
-    var ig = el('a', 'btn btn--ghost', ICON.instagram + '<span>@' + esc(DATA.site.instagram) + '</span>');
-    ig.href = igLink(); ig.target = '_blank'; ig.rel = 'noopener';
-    ig.setAttribute('aria-label', ui('igLabel') + ' @' + DATA.site.instagram);
-    box.appendChild(ig);
+  function renderEvento() {
+    var sec = document.getElementById('evento');
+    var ev = DATA.evento;
+    if (!ev || !ev.active) { sec.hidden = true; return; }
+
+    sec.hidden = false;
+    document.getElementById('eventoKicker').textContent = ui('eventoKicker');
+    document.getElementById('evento-title').textContent = t(ev.name);
+
+    var sub = document.getElementById('eventoSubtitle');
+    sub.textContent = t(ev.subtitle);
+    sub.hidden = !t(ev.subtitle);
+
+    document.getElementById('eventoText').textContent = t(ev.text);
+
+    var facts = document.getElementById('eventoFacts');
+    facts.innerHTML = '';
+    (ev.facts || []).forEach(function (f) {
+      var box = el('div', 'fact');
+      box.innerHTML = '<dt class="fact__label">' + esc(t(f.label)) + '</dt>' +
+                      '<dd class="fact__value">' + esc(t(f.value)) + '</dd>';
+      facts.appendChild(box);
+    });
+    facts.hidden = !(ev.facts && ev.facts.length);
+  }
+
+  function renderFooter() {
+    var a = document.getElementById('footerIg');
+    a.href = igLink();
+    a.innerHTML = ICON.instagram + '<span>@' + esc(DATA.site.instagram) + '</span>';
+    a.setAttribute('aria-label', ui('igLabel'));
   }
 
   function renderFab() {
     var fab = document.getElementById('fab');
-    var icon = document.getElementById('fabIcon');
-    var label = document.getElementById('fabLabel');
-    var wa = waLink(ui('waGeneral'));
-    if (wa) {
-      fab.href = wa;
-      icon.innerHTML = ICON.whatsapp;
-      label.textContent = ui('orderShort');
-      fab.setAttribute('aria-label', ui('order'));
-    } else {
-      fab.href = igLink();
-      icon.innerHTML = ICON.instagram;
-      label.textContent = '@' + DATA.site.instagram;
-      fab.setAttribute('aria-label', ui('orderIg'));
-    }
+    document.getElementById('fabIcon').innerHTML = ICON.instagram;
+    document.getElementById('fabLabel').textContent = ui('follow');
+    fab.href = igLink();
+    fab.setAttribute('aria-label', ui('igLabel') + ' @' + DATA.site.instagram);
   }
 
   /* ---------- textos estáticos e idioma ---------- */
@@ -313,7 +322,8 @@
     saveLang(next);
     applyStatic();
     renderMenu();
-    renderEvents();
+    renderEvento();
+    renderFooter();
     renderFab();
     observeAll();
     if (sheetState.id) openSheet(sheetState.id, true);
@@ -371,14 +381,9 @@
     document.getElementById('sheetPrice').textContent = money(p.price);
     document.getElementById('sheetDesc').textContent = t(p.long) || t(p.short);
 
-    var actions = document.getElementById('sheetActions');
-    actions.innerHTML = '';
-    var wa = waLink(ui('waProduct') + ': ' + t(p.name) + ' (' + money(p.price) + ')');
-    var a = el('a', 'btn btn--primary',
-      (wa ? ICON.whatsapp : ICON.instagram) + '<span>' + esc(wa ? ui('order') : ui('orderIg')) + '</span>');
-    a.href = wa || igLink();
-    a.target = '_blank'; a.rel = 'noopener';
-    actions.appendChild(a);
+    document.getElementById('sheetActions').innerHTML =
+      '<p class="sheet__stand">' + ICON.stand +
+      '<span>' + esc(ui('orderAtStand')) + '</span></p>';
 
     if (keepScroll) return;
 
@@ -460,8 +465,8 @@
       var n = document.getElementById(c.id);
       if (n) spy.observe(n);
     });
-    var ev = document.getElementById('eventos');
-    if (ev) spy.observe(ev);
+    var ev = document.getElementById('evento');
+    if (ev && !ev.hidden) spy.observe(ev);
   }
 
   var revealer = null;
@@ -513,7 +518,8 @@
   renderHero();
   applyStatic();
   renderMenu();
-  renderEvents();
+  renderEvento();
+  renderFooter();
   renderFab();
   observeAll();
 })();

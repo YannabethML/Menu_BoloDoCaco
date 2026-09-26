@@ -427,39 +427,57 @@ a{color:var(--c-azulejo)}
 .card__price{font-family:var(--f-display);font-size:1.15rem;font-weight:700;
   color:var(--c-terracota);font-variant-numeric:tabular-nums}
 
-/* ---------- 13. Eventos ---------- */
-.events{
+/* ---------- 13. El evento del día ---------- */
+.evento{
   position:relative;isolation:isolate;
-  margin-top:2.5rem;padding:3.25rem 0;
+  margin-top:1rem;padding:3.5rem 0;
   background:var(--c-surface-2);
   border-top:1px solid var(--c-line);
   text-align:center;
   scroll-margin-top:calc(var(--topbar-h) + var(--catnav-h));
 }
-.events::before{
+.evento[hidden]{display:none}
+.evento::before{
   content:"";position:absolute;inset:0;z-index:-1;
   background-image:url('../img/azulejo.svg');background-size:88px 88px;opacity:.05;
 }
-.events__text{margin-top:1.1rem;color:var(--c-ink-soft);max-width:28rem;
-  margin-inline:auto;text-wrap:pretty}
-.events__actions{display:flex;flex-direction:column;gap:.65rem;
-  margin-top:1.75rem;align-items:center}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
-  min-height:2.9rem;padding:.7rem 1.4rem;border-radius:999px;
-  font-weight:600;font-size:.925rem;text-decoration:none;border:1px solid transparent;
-  transition:transform .2s var(--ease),filter .2s var(--ease);
+.evento__subtitle{
+  margin-top:1rem;
+  font-family:var(--f-display);font-size:1.05rem;font-style:italic;
+  color:var(--c-azulejo);text-wrap:balance;
 }
-.btn svg{width:1.15rem;height:1.15rem;flex:0 0 auto}
-.btn:active{transform:scale(.97)}
-.btn--primary{background:var(--c-terracota);color:#FFF}
-.btn--ghost{background:transparent;color:var(--c-ink);border-color:var(--c-line)}
-@media (hover:hover){.btn:hover{filter:brightness(1.06)}}
+.evento__text{
+  margin-top:1.1rem;color:var(--c-ink-soft);
+  max-width:34rem;margin-inline:auto;text-align:left;text-wrap:pretty;
+}
+@media (min-width:36rem){.evento__text{text-align:center}}
+
+.facts{
+  margin:2rem auto 0;padding:1.5rem 0 0;
+  border-top:1px solid var(--c-line);
+  display:grid;gap:1.1rem;text-align:left;
+  max-width:34rem;
+}
+.facts[hidden]{display:none}
+@media (min-width:40rem){.facts{grid-template-columns:repeat(3,1fr);gap:1.75rem}}
+.fact{padding-left:.9rem;border-left:2px solid var(--c-codea)}
+.fact__label{
+  font-size:.62rem;text-transform:uppercase;letter-spacing:.16em;
+  font-weight:700;color:var(--c-terracota);
+}
+.fact__value{margin:.3rem 0 0;font-size:.875rem;line-height:1.45;color:var(--c-ink-soft)}
 
 /* ---------- 14. Pie ---------- */
-.footer{padding:2.25rem 0 6rem;text-align:center}
+.footer{padding:2.5rem 0 6rem;text-align:center}
 .footer__brand{font-family:var(--f-display);font-weight:700;font-size:.95rem}
-.footer__note{font-size:.75rem;color:var(--c-ink-soft);margin-top:.3rem}
+.footer__ig{
+  display:inline-flex;align-items:center;gap:.45rem;
+  margin-top:.9rem;padding:.5rem 1rem;border-radius:999px;
+  border:1px solid var(--c-line);background:var(--c-surface);
+  color:var(--c-ink);text-decoration:none;font-size:.85rem;font-weight:600;
+}
+.footer__ig svg{width:1.05rem;height:1.05rem}
+.footer__note{font-size:.75rem;color:var(--c-ink-soft);margin-top:1rem}
 
 /* ---------- 15. Botón flotante ---------- */
 .fab{
@@ -521,8 +539,15 @@ a{color:var(--c-azulejo)}
 .sheet__price{font-family:var(--f-display);font-size:1.75rem;font-weight:700;
   color:var(--c-terracota);line-height:1;font-variant-numeric:tabular-nums}
 .sheet__desc{color:var(--c-ink-soft);font-size:.95rem;text-wrap:pretty}
-.sheet__actions{margin-top:.5rem}
-.sheet__actions .btn{width:100%}
+.sheet__actions{margin-top:.4rem}
+.sheet__stand{
+  display:flex;align-items:center;justify-content:center;gap:.55rem;
+  margin:0;padding:.85rem 1rem;border-radius:var(--r-md);
+  background:var(--c-surface-2);border:1px dashed var(--c-line);
+  color:var(--c-ink-soft);
+  font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+}
+.sheet__stand svg{width:1.2rem;height:1.2rem;color:var(--c-terracota);flex:0 0 auto}
 
 /* ---------- 17. Revelado al hacer scroll ---------- */
 .reveal{opacity:0;transform:translateY(14px);

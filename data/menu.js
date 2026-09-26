@@ -220,7 +220,35 @@ window.MENU = {
   ],
 
   /* ---------------------------------------------------------
-     5. TEXTOS DE INTERFAZ
+     5. EL EVENTO DEL DÍA
+         Se cambia antes de cada evento. Si no hay ninguno,
+         pon active: false y la sección desaparece sola
+         (también su pestaña en la barra de categorías).
+     --------------------------------------------------------- */
+  evento: {
+    active: true,
+    name:     { es: "A Vindima",  pt: "A Vindima" },
+    subtitle: { es: "La fiesta de la vendimia portuguesa",
+                pt: "A festa das vindimas portuguesas" },
+    text: {
+      es: "Entre finales de agosto y octubre, el Valle del Duero se llena de gente recogiendo la uva a mano y pisándola descalza en lagares de granito, como se ha hecho durante siglos. La vendimia se celebra con desfiles, fado en vivo y mesas largas que no se acaban. Hoy traemos aquí ese mismo espíritu: la fiesta del final de la cosecha, con el pan de la isla recién hecho sobre la piedra.",
+      pt: "Entre o fim de agosto e outubro, o Vale do Douro enche-se de gente a apanhar a uva à mão e a pisá-la descalça em lagares de granito, como há séculos. A vindima festeja-se com desfiles, fado ao vivo e mesas compridas que não acabam. Hoje trazemos aqui esse mesmo espírito: a festa do fim da colheita, com o pão da ilha acabado de fazer na pedra."
+    },
+    facts: [
+      { label: { es: "Cuándo",    pt: "Quando" },
+        value: { es: "De finales de agosto a octubre, con septiembre en su punto",
+                 pt: "Do fim de agosto a outubro, com setembro no auge" } },
+      { label: { es: "De dónde viene", pt: "De onde vem" },
+        value: { es: "El Valle del Duero, cuna del vino de Oporto",
+                 pt: "O Vale do Douro, berço do vinho do Porto" } },
+      { label: { es: "La tradición", pt: "A tradição" },
+        value: { es: "Pisar la uva en lagares de granito, al ritmo del acordeón",
+                 pt: "Pisar a uva em lagares de granito, ao ritmo do acordeão" } }
+    ]
+  },
+
+  /* ---------------------------------------------------------
+     6. TEXTOS DE INTERFAZ
      --------------------------------------------------------- */
   ui: {
     es: {
@@ -232,11 +260,11 @@ window.MENU = {
       order: "Encargar por WhatsApp",
       orderShort: "Encargar",
       orderIg: "Escríbenos por Instagram",
-      eventsKicker: "Dónde encontrarnos",
-      eventsChip: "Eventos",
-      eventsTitle: "Nos movemos con los eventos",
-      eventsText: "No tenemos local fijo: llevamos la piedra a los eventos de la comunidad portuguesa. Escríbenos para encargos o para saber en qué evento estaremos.",
+      eventoKicker: "El evento de hoy",
+      eventoChip: "El evento",
+      orderAtStand: "Pídelo en nuestro stand",
       igLabel: "Síguenos en Instagram",
+      follow: "Síguenos",
       badges: {
         estrella: "La estrella",
         "mas-vendido": "Más vendido",
@@ -258,11 +286,11 @@ window.MENU = {
       order: "Encomendar por WhatsApp",
       orderShort: "Encomendar",
       orderIg: "Fale connosco no Instagram",
-      eventsKicker: "Onde nos encontrar",
-      eventsChip: "Eventos",
-      eventsTitle: "Andamos com os eventos",
-      eventsText: "Não temos loja fixa: levamos a pedra aos eventos da comunidade portuguesa. Fale connosco para encomendas ou para saber em que evento estaremos.",
+      eventoKicker: "O evento de hoje",
+      eventoChip: "O evento",
+      orderAtStand: "Peça no nosso stand",
       igLabel: "Siga-nos no Instagram",
+      follow: "Siga-nos",
       badges: {
         estrella: "A estrela",
         "mas-vendido": "Mais vendido",
