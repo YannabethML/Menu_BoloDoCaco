@@ -64,11 +64,15 @@ python3 -m http.server 8000   # → http://localhost:8000
 
 ## Publicar en GitHub Pages
 
-*Settings → Pages → Source: Deploy from a branch → rama `main`, carpeta `/ (root)`.*
+Publicado en **https://bolodocacofatima.github.io/**
 
-Ya está preparado: `index.html` en la raíz, `.nojekyll` incluido y todas las
-rutas son relativas, así que funciona igual en `usuario.github.io/repo/`.
-El QR debe apuntar a esa URL.
+El repositorio se llama igual que la organización más `.github.io`, que es la
+convención de GitHub para servir en la raíz: por eso la dirección no lleva
+carpeta detrás. Se configura en *Settings → Pages → Deploy from a branch*.
+
+Todas las rutas del proyecto son relativas y hay un `.nojekyll`, así que el
+sitio funciona igual servido desde la raíz o desde una subcarpeta. El QR debe
+apuntar a esa dirección.
 
 ## Estructura
 
