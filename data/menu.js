@@ -128,22 +128,22 @@ window.MENU = {
       }
     },
     {
-      id: "bolo-monserratina",
+      id: "bolo-montserratina",
       category: "bolo-do-caco",
       price: 10,
       badges: [],
-      image: { file: "bolo-monserratina.jpg", formats: ["avif", "webp"] },
+      image: { file: "bolo-montserratina.jpg", formats: ["avif", "webp"] },
       name: {
-        es: "Bolo do Caco con Chorizo Ahumado Monserratina",
-        pt: "Bolo do Caco com Chouriço Fumado Monserratina"
+        es: "Bolo do Caco con Chorizo Ahumado Montserratina",
+        pt: "Bolo do Caco com Chouriço Fumado Montserratina"
       },
       short: {
-        es: "Chorizo ahumado Monserratina, a la plancha.",
-        pt: "Chouriço fumado Monserratina, na chapa."
+        es: "Chorizo ahumado Montserratina, a la plancha.",
+        pt: "Chouriço fumado Montserratina, na chapa."
       },
       long: {
-        es: "Nuestro bolo do caco relleno de chorizo ahumado Monserratina hecho a la plancha. Ahumado, jugoso y contundente.",
-        pt: "O nosso bolo do caco recheado com chouriço fumado Monserratina feito na chapa. Fumado, suculento e substancial."
+        es: "Nuestro bolo do caco relleno de chorizo ahumado Montserratina hecho a la plancha. Ahumado, jugoso y contundente.",
+        pt: "O nosso bolo do caco recheado com chouriço fumado Montserratina feito na chapa. Fumado, suculento e substancial."
       }
     },
     {

@@ -33,7 +33,7 @@
   /* Productos que comparten diapositiva. El menú del QR los sigue mostrando
      por separado: esto es solo cómo se agrupan en la pantalla del stand. */
   var PAREJAS = [
-    ['bolo-monserratina', 'bolo-portugues'],
+    ['bolo-montserratina', 'bolo-portugues'],
     ['bolo-de-mel', 'broas'],
     ['chorizo-kilo', 'margarina-ajo']
   ];
